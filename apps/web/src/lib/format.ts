@@ -17,6 +17,14 @@ export function formatRelative(iso: string | null): string {
   return new Date(iso).toLocaleDateString(undefined, { month: "short", day: "numeric" });
 }
 
+/** "Kicks off in 1h 38m" for games starting within a day; null otherwise. */
+export function formatCountdown(iso: string): string | null {
+  const mins = Math.round((new Date(iso).getTime() - Date.now()) / 60_000);
+  if (mins <= 0 || mins >= 24 * 60) return null;
+  const h = Math.floor(mins / 60);
+  return `Kicks off in ${h ? `${h}h ` : ""}${mins % 60}m`;
+}
+
 export function formatPoints(points: number | null): string {
   return points === null ? "—" : points.toFixed(2);
 }

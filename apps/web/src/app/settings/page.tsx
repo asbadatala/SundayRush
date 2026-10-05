@@ -14,6 +14,7 @@ import { api, resetSession } from "@/lib/api";
 import { formatRelative } from "@/lib/format";
 import { GAME_SORTS, type GameSort } from "@/lib/game-sort";
 import { clearLocalPrefs, type FilterToggle, useDefaultFilters, useFilters } from "@/lib/prefs";
+import { setThemePref, type ThemePref, useThemePref } from "@/lib/theme";
 
 const FILTER_LABELS: { key: FilterToggle; label: string }[] = [
   { key: "starters", label: "Show my starters" },
@@ -22,11 +23,18 @@ const FILTER_LABELS: { key: FilterToggle; label: string }[] = [
   { key: "allGames", label: "Show all NFL games" },
 ];
 
+const THEMES: { value: ThemePref; label: string }[] = [
+  { value: "light", label: "Day game (light)" },
+  { value: "dark", label: "Night game (dark)" },
+  { value: "system", label: "Match my device" },
+];
+
 export default function SettingsPage() {
   const router = useRouter();
   const queryClient = useQueryClient();
   const [defaults, setDefaults] = useDefaultFilters();
   const [, setFilters] = useFilters();
+  const theme = useThemePref();
   const providers = useQuery({ queryKey: ["providers"], queryFn: api.providers });
   const yahoo = providers.data?.find((p) => p.id === "yahoo");
 
@@ -38,6 +46,7 @@ export default function SettingsPage() {
     mutationFn: api.clearSession,
     onSuccess: () => {
       clearLocalPrefs();
+      setThemePref("system");
       resetSession();
       queryClient.clear();
       router.push("/");
@@ -75,6 +84,18 @@ export default function SettingsPage() {
             aria-label="Default game order"
           >
             {GAME_SORTS.map(({ value, label }) => (
+              <Label key={value} className="flex items-center gap-2 font-normal">
+                <RadioGroupItem value={value} />
+                {label}
+              </Label>
+            ))}
+          </RadioGroup>
+        </Card>
+
+        <Card className="gap-3 px-4 py-4">
+          <h2 className="font-semibold">Appearance</h2>
+          <RadioGroup value={theme} onValueChange={(v) => setThemePref(v as ThemePref)} aria-label="Appearance">
+            {THEMES.map(({ value, label }) => (
               <Label key={value} className="flex items-center gap-2 font-normal">
                 <RadioGroupItem value={value} />
                 {label}

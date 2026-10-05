@@ -9,21 +9,24 @@ import { FilterChips } from "@/components/filter-chips";
 import { GameCard } from "@/components/game-card";
 import { GameSortPicker } from "@/components/game-sort-picker";
 import { LeagueErrors } from "@/components/league-errors";
+import { LogoMark } from "@/components/logo";
 import { PageHeader } from "@/components/page-header";
 import { PlayerRow } from "@/components/player-row";
 import { CardSkeletons, QueryError } from "@/components/query-state";
 import { Button, buttonVariants } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { api } from "@/lib/api";
-import { formatTime } from "@/lib/format";
-import { sortGames } from "@/lib/game-sort";
+import { formatTime, isLive } from "@/lib/format";
+import { relevance, sortGames } from "@/lib/game-sort";
+import { usePointDeltas } from "@/lib/point-deltas";
 import { useFilters } from "@/lib/prefs";
-import type { GameDay, PlayerGroups } from "@/lib/types";
+import type { GameDay, Matchups, PlayerGroups } from "@/lib/types";
 
 function EmptyState() {
   return (
     <Card className="items-center px-6 py-12 text-center" data-testid="empty-state">
-      <h2 className="text-xl font-bold">Every NFL game that matters to you</h2>
+      <LogoMark className="size-12" />
+      <h2 className="font-heading text-2xl font-bold tracking-[0.02em] uppercase">Every NFL game that matters to you</h2>
       <p className="max-w-sm text-muted-foreground">
         Connect your fantasy teams and see every NFL game that matters to you in one place.
       </p>
@@ -52,7 +55,37 @@ function StaleNotice({ data }: { data: GameDay }) {
       </p>
     );
   }
+  if (data.any_live) {
+    return (
+      <span className="flex items-center gap-1.5">
+        <span className="size-[7px] rounded-full bg-live motion-safe:animate-pulse" aria-hidden />
+        Auto-updating{data.stats_as_of ? ` · stats as of ${formatTime(data.stats_as_of)}` : ""}
+      </span>
+    );
+  }
   return data.stats_as_of ? <span>Stats as of {formatTime(data.stats_as_of)}</span> : null;
+}
+
+/** At-a-glance strip: relevant live games, my starters in them, and head-to-head matchups I'm winning. */
+function Summary({ data, matchups }: { data: GameDay; matchups?: Matchups }) {
+  const live = data.games.filter((g) => isLive(g.game) && relevance(g) > 0);
+  const h2h = matchups?.matchups.filter((m) => m.has_matchup && m.opponent) ?? [];
+  const leading = h2h.filter((m) => (m.my_team.score ?? 0) > (m.opponent?.score ?? 0)).length;
+  const stats = [
+    { value: live.length, label: "Games live" },
+    { value: live.reduce((n, g) => n + g.my_starters.length, 0), label: "Starters active" },
+    { value: h2h.length ? `${leading}/${h2h.length}` : "—", label: "Matchups leading" },
+  ];
+  return (
+    <div className="grid grid-cols-3 gap-2" data-testid="game-day-summary">
+      {stats.map((s) => (
+        <Card key={s.label} className="gap-1 px-3 py-2.5">
+          <div className="font-heading text-2xl leading-none font-semibold tabular-nums">{s.value}</div>
+          <div className="text-[11px] leading-tight text-muted-foreground">{s.label}</div>
+        </Card>
+      ))}
+    </div>
+  );
 }
 
 export default function GamesPage() {
@@ -66,11 +99,20 @@ export default function GamesPage() {
     // Poll only while a game is live; otherwise data is refreshed on focus/explicit refresh.
     refetchInterval: (q) => (q.state.data?.any_live ? 60_000 : false),
   });
+  const data = query.data;
+  const matchups = useQuery({
+    queryKey: ["matchups"],
+    queryFn: () => api.matchups(),
+    enabled: !!data?.has_teams,
+    refetchInterval: data?.any_live ? 60_000 : false,
+  });
+  const deltas = usePointDeltas(data);
 
   async function refresh() {
     setRefreshing(true);
     try {
       queryClient.setQueryData(["game-day"], await api.gameDay({ refresh: true }));
+      void queryClient.invalidateQueries({ queryKey: ["matchups"] });
     } catch {
       await query.refetch();
     } finally {
@@ -78,7 +120,6 @@ export default function GamesPage() {
     }
   }
 
-  const data = query.data;
   const visible = sortGames(
     data?.games
       .map((g) => ({ group: g, ...pick(g, filters) }))
@@ -115,6 +156,7 @@ export default function GamesPage() {
 
       {data?.has_teams && (
         <div className="space-y-4">
+          <Summary data={data} matchups={matchups.data} />
           <FilterChips filters={filters} onChange={setFilters} />
           <GameSortPicker value={filters.sort} onChange={(sort) => setFilters({ sort })} />
           <LeagueErrors errors={data.league_errors} />
@@ -124,14 +166,14 @@ export default function GamesPage() {
             </Card>
           )}
           {visible.map(({ group, starters, bench, opponents }) => (
-            <GameCard key={group.game.id} group={group} starters={starters} bench={bench} opponents={opponents} />
+            <GameCard key={group.game.id} group={group} starters={starters} bench={bench} opponents={opponents} deltas={deltas} />
           ))}
           {noGameRows.length > 0 && (
             <Card className="gap-0 px-4 py-3" data-testid="no-game-group">
               <h2 className="text-sm font-semibold">Bye week, free agent, or unmatched</h2>
               <ul className="divide-y">
                 {noGameRows.map((r) => (
-                  <PlayerRow key={r.key} row={r} />
+                  <PlayerRow key={r.key} row={r} delta={deltas.get(r.key)} />
                 ))}
               </ul>
             </Card>

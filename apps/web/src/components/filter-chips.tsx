@@ -24,8 +24,8 @@ export function FilterChips({ filters, onChange }: { filters: Filters; onChange:
             aria-pressed={on}
             onClick={() => onChange({ [key]: !on })}
             className={cn(
-              "inline-flex items-center gap-1 rounded-full border px-3 py-1 text-sm font-medium transition-colors",
-              on ? "border-foreground bg-foreground text-background" : "bg-background text-foreground hover:bg-muted",
+              "inline-flex items-center gap-1.5 rounded-sm border px-3 py-1.5 text-[13px] font-semibold transition-colors",
+              on ? "border-primary bg-primary text-primary-foreground" : "bg-card text-muted-foreground hover:bg-muted",
             )}
           >
             {on && <Check className="size-3.5" aria-hidden />}
