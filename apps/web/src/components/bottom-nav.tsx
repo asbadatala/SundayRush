@@ -18,7 +18,7 @@ export function BottomNav() {
   return (
     <nav
       aria-label="Primary"
-      className="fixed inset-x-0 bottom-0 z-20 border-t bg-background/95 pb-[env(safe-area-inset-bottom)] backdrop-blur"
+      className="fixed inset-x-0 bottom-0 z-20 border-t bg-card/90 pb-[env(safe-area-inset-bottom)] backdrop-blur-md dark:bg-background/90"
     >
       <ul className="mx-auto grid max-w-3xl grid-cols-4">
         {ITEMS.map(({ href, label, icon: Icon }) => {
@@ -29,11 +29,11 @@ export function BottomNav() {
                 href={href}
                 aria-current={active ? "page" : undefined}
                 className={cn(
-                  "flex flex-col items-center gap-0.5 py-2 text-xs font-medium text-muted-foreground transition-colors",
-                  active && "text-foreground",
+                  "flex flex-col items-center gap-0.5 py-2 text-[11px] font-medium text-muted-foreground transition-colors",
+                  active && "font-bold text-nav-active",
                 )}
               >
-                <Icon className="size-5" aria-hidden />
+                <Icon className="size-[22px]" aria-hidden />
                 {label}
               </Link>
             </li>

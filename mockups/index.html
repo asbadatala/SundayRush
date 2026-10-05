@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SundayRush — theme mockups</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: system-ui, -apple-system, sans-serif; background: #ececef; color: #18181b; padding: 32px 24px 64px; }
+  header { max-width: 1320px; margin: 0 auto 28px; display: flex; flex-wrap: wrap; align-items: end; justify-content: space-between; gap: 16px; }
+  h1 { font-size: 26px; letter-spacing: -0.02em; }
+  header p { color: #52525b; margin-top: 4px; font-size: 14px; }
+  .modes { display: inline-flex; gap: 2px; padding: 3px; background: #dcdce0; border-radius: 10px; }
+  .modes button { font: inherit; font-size: 13px; font-weight: 600; border: 0; background: transparent; padding: 6px 14px; border-radius: 8px; cursor: pointer; color: #52525b; }
+  .modes button[aria-pressed="true"] { background: #fff; color: #18181b; box-shadow: 0 1px 2px rgb(0 0 0 / 12%); }
+  .grid { max-width: 1320px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(410px, 1fr)); gap: 32px; justify-items: center; }
+  .col { display: flex; flex-direction: column; align-items: center; gap: 14px; }
+  .label { text-align: center; }
+  .label h2 { font-size: 18px; }
+  .label p { font-size: 13px; color: #52525b; max-width: 360px; margin-top: 2px; }
+  .label a { font-size: 13px; color: #2563eb; }
+  .phone { width: 410px; height: 864px; padding: 10px; border-radius: 52px; background: #111; box-shadow: 0 30px 60px -20px rgb(0 0 0 / 45%); }
+  .phone iframe { width: 390px; height: 844px; border: 0; border-radius: 42px; display: block; background: #fff; }
+  .swatches { display: flex; flex-wrap: wrap; justify-content: center; gap: 6px; max-width: 400px; }
+  .sw { display: flex; flex-direction: column; align-items: center; gap: 3px; font-size: 10px; color: #52525b; width: 44px; }
+  .sw i { width: 32px; height: 32px; border-radius: 8px; border: 1px solid rgb(0 0 0 / 10%); }
+</style>
+</head>
+<body>
+<header>
+  <div>
+    <h1>SundayRush — Games screen, 3 directions</h1>
+    <p>Same data, same markup; only tokens, type, and flourishes change. Each phone is live — tap the sun/moon icon or the chips.</p>
+  </div>
+  <div class="modes" role="group" aria-label="Mode">
+    <button data-mode="" aria-pressed="true">Theme default</button>
+    <button data-mode="light" aria-pressed="false">All light</button>
+    <button data-mode="dark" aria-pressed="false">All dark</button>
+  </div>
+</header>
+
+<div class="grid">
+  <div class="col">
+    <div class="label">
+      <h2>1 · Primetime</h2>
+      <p>Dark-first broadcast scoreboard. Electric lime = live &amp; yours. Saira Condensed + Geist.</p>
+      <a href="primetime.html" target="_blank">Open full page ↗</a>
+    </div>
+    <div class="phone"><iframe src="primetime.html" title="Primetime mockup"></iframe></div>
+    <div class="swatches">
+      <div class="sw"><i style="background:oklch(0.16 0.02 260)"></i>bg</div>
+      <div class="sw"><i style="background:oklch(0.21 0.025 260)"></i>card</div>
+      <div class="sw"><i style="background:oklch(0.88 0.2 128)"></i>live</div>
+      <div class="sw"><i style="background:oklch(0.9 0.19 128)"></i>starter</div>
+      <div class="sw"><i style="background:oklch(0.83 0.03 250)"></i>bench</div>
+      <div class="sw"><i style="background:oklch(0.8 0.15 25)"></i>opp</div>
+      <div class="sw"><i style="background:oklch(0.87 0.15 85)"></i>injury</div>
+    </div>
+  </div>
+
+  <div class="col">
+    <div class="label">
+      <h2>2 · Gridiron Classic</h2>
+      <p>Turf, chalk &amp; pigskin. Yard-line bands; live = the yellow first-down line. Oswald + Inter.</p>
+      <a href="gridiron.html" target="_blank">Open full page ↗</a>
+    </div>
+    <div class="phone"><iframe src="gridiron.html" title="Gridiron Classic mockup"></iframe></div>
+    <div class="swatches">
+      <div class="sw"><i style="background:oklch(0.97 0.008 100)"></i>bg</div>
+      <div class="sw"><i style="background:oklch(0.5 0.13 150)"></i>turf</div>
+      <div class="sw"><i style="background:oklch(0.5 0.09 50)"></i>pigskin</div>
+      <div class="sw"><i style="background:oklch(0.88 0.17 95)"></i>live</div>
+      <div class="sw"><i style="background:oklch(0.4 0.12 150)"></i>starter</div>
+      <div class="sw"><i style="background:oklch(0.42 0.03 60)"></i>bench</div>
+      <div class="sw"><i style="background:oklch(0.48 0.17 30)"></i>opp</div>
+    </div>
+  </div>
+
+  <div class="col">
+    <div class="label">
+      <h2>3 · Sunday Sunrise</h2>
+      <p>Warm orange→magenta brand gradient, soft radii, chunky numbers. Bricolage Grotesque + Inter.</p>
+      <a href="sunrise.html" target="_blank">Open full page ↗</a>
+    </div>
+    <div class="phone"><iframe src="sunrise.html" title="Sunday Sunrise mockup"></iframe></div>
+    <div class="swatches">
+      <div class="sw"><i style="background:oklch(0.985 0.012 60)"></i>bg</div>
+      <div class="sw"><i style="background:linear-gradient(120deg, oklch(0.74 0.17 62), oklch(0.66 0.21 28) 50%, oklch(0.56 0.23 350))"></i>brand</div>
+      <div class="sw"><i style="background:oklch(0.6 0.22 20)"></i>live</div>
+      <div class="sw"><i style="background:oklch(0.47 0.13 45)"></i>starter</div>
+      <div class="sw"><i style="background:oklch(0.45 0.05 300)"></i>bench</div>
+      <div class="sw"><i style="background:oklch(0.47 0.19 345)"></i>opp</div>
+      <div class="sw"><i style="background:oklch(0.17 0.04 330)"></i>night</div>
+    </div>
+  </div>
+</div>
+
+<script>
+  const frames = [...document.querySelectorAll("iframe")];
+  const base = frames.map((f) => f.getAttribute("src"));
+  document.querySelectorAll(".modes button").forEach((b) => (b.onclick = () => {
+    document.querySelectorAll(".modes button").forEach((x) => x.setAttribute("aria-pressed", x === b));
+    frames.forEach((f, i) => (f.src = b.dataset.mode ? `${base[i]}?mode=${b.dataset.mode}` : base[i]));
+  }));
+</script>
+</body>
+</html>

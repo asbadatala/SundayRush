@@ -1,0 +1,415 @@
+<!doctype html>
+<html lang="en" data-mode="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>SundayRush mockup — Primetime</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@500;700&family=Saira+Condensed:wght@600;700;800&display=swap">
+<link rel="stylesheet" href="shared.css">
+<style>
+/* PRIMETIME — broadcast scoreboard. Dark by default; electric lime = live/your stuff. */
+:root {
+  --font-display: "Saira Condensed", system-ui, sans-serif;
+  --font-score: "Saira Condensed", system-ui, sans-serif;
+  --font-points: "Geist Mono", ui-monospace, monospace;
+  --font-body: "Geist", system-ui, sans-serif;
+  --radius: 12px; --radius-sm: 8px; --radius-chip: 6px; --radius-badge: 4px; --radius-avatar: 8px;
+  --lime: oklch(0.88 0.2 128);
+  --live: var(--lime); --live-fg: oklch(0.2 0.05 130);
+  --head-bg: linear-gradient(100deg, oklch(0.25 0.045 262), oklch(0.19 0.025 260));
+  --head-fg: oklch(0.97 0.005 260); --head-muted: oklch(0.75 0.02 260);
+  --scorebox: oklch(0.12 0.02 260);
+}
+:root[data-mode="dark"] {
+  --bg: oklch(0.16 0.02 260); --fg: oklch(0.97 0.005 260);
+  --card: oklch(0.21 0.025 260); --muted: oklch(0.26 0.025 260); --muted-fg: oklch(0.72 0.02 260);
+  --border: oklch(1 0 0 / 8%); --shadow: none; --stake-bg: oklch(0.185 0.022 260);
+  --primary: var(--lime); --primary-fg: oklch(0.2 0.05 130);
+  --starter-bg: oklch(0.88 0.2 128 / 15%); --starter-fg: oklch(0.9 0.19 128);
+  --bench-bg: oklch(0.7 0.03 250 / 20%); --bench-fg: oklch(0.83 0.03 250);
+  --opp-bg: oklch(0.7 0.19 25 / 20%); --opp-fg: oklch(0.8 0.15 25);
+  --injury-bg: oklch(0.82 0.16 80 / 20%); --injury-fg: oklch(0.87 0.15 85); --warn-fg: oklch(0.84 0.15 80);
+  --qb: oklch(0.76 0.16 20); --rb: oklch(0.82 0.17 155); --wr: oklch(0.78 0.13 240); --te: oklch(0.84 0.15 75);
+  --nav-bg: oklch(0.16 0.02 260 / 88%); --nav-active: var(--lime); --flash: oklch(0.88 0.2 128 / 14%);
+  --final-opacity: 0.75;
+}
+:root[data-mode="light"] {
+  --bg: oklch(0.965 0.006 260); --fg: oklch(0.2 0.03 260);
+  --card: oklch(1 0 0); --muted: oklch(0.93 0.008 260); --muted-fg: oklch(0.48 0.02 260);
+  --border: oklch(0.2 0.03 260 / 10%); --shadow: 0 1px 2px oklch(0.2 0.03 260 / 6%); --stake-bg: oklch(0.975 0.005 260);
+  --primary: oklch(0.22 0.035 262); --primary-fg: var(--lime);
+  --starter-bg: oklch(0.88 0.2 128 / 35%); --starter-fg: oklch(0.38 0.11 135);
+  --bench-bg: oklch(0.7 0.03 250 / 18%); --bench-fg: oklch(0.42 0.03 250);
+  --opp-bg: oklch(0.7 0.19 25 / 16%); --opp-fg: oklch(0.5 0.18 25);
+  --injury-bg: oklch(0.9 0.12 85); --injury-fg: oklch(0.42 0.1 65); --warn-fg: oklch(0.52 0.13 65);
+  --qb: oklch(0.55 0.19 20); --rb: oklch(0.5 0.14 155); --wr: oklch(0.5 0.15 245); --te: oklch(0.58 0.14 65);
+  --nav-bg: oklch(1 0 0 / 90%); --nav-active: oklch(0.22 0.035 262); --flash: oklch(0.88 0.2 128 / 28%);
+  --final-opacity: 0.85;
+}
+
+.wordmark { font-weight: 800; font-style: italic; text-transform: uppercase; letter-spacing: 0.01em; }
+.wordmark b { color: var(--lime); font-weight: 800; }
+:root[data-mode="light"] .wordmark b { color: oklch(0.55 0.17 135); }
+.week { font-weight: 800; font-style: italic; text-transform: uppercase; font-size: 38px; }
+.stat-val { font-weight: 800; }
+.chip { font-family: var(--font-display); font-weight: 700; font-size: 14px; text-transform: uppercase; letter-spacing: 0.04em; }
+
+/* Scoreboard band: dark in both modes, broadcast-style score boxes */
+.game-head { border-bottom: 0; }
+.abbr { font-size: 22px; font-weight: 800; }
+.score { padding: 0 8px; background: var(--scorebox); border-radius: 4px; font-size: 24px; font-weight: 800; min-width: 3ch; }
+.win-mark { color: var(--lime); }
+.clock { font-family: var(--font-display); font-size: 15px; letter-spacing: 0.03em; }
+.kickoff { font-family: var(--font-display); font-size: 15px; font-weight: 700; }
+
+/* Live cards glow lime down the left edge */
+.game-card.is-live { box-shadow: inset 3px 0 0 var(--lime), 0 0 28px -10px var(--lime); border-color: oklch(0.88 0.2 128 / 35%); }
+.live-bug { border-radius: 3px; transform: skewX(-8deg); }
+.pval { font-size: 17px; }
+.section-title { font-family: var(--font-display); font-size: 13px; font-weight: 700; letter-spacing: 0.1em; }
+</style>
+</head>
+<body data-theme="primetime">
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-star" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></symbol>
+  <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></symbol>
+  <symbol id="i-swords" viewBox="0 0 24 24"><polyline points="14.5 17.5 3 6 3 3 6 3 17.5 14.5"/><line x1="13" x2="19" y1="19" y2="13"/><line x1="16" x2="20" y1="16" y2="20"/><line x1="19" x2="21" y1="21" y2="19"/><polyline points="14.5 6.5 18 3 21 3 21 6 17.5 9.5"/><line x1="5" x2="9" y1="14" y2="18"/><line x1="7" x2="4" y1="17" y2="20"/><line x1="3" x2="5" y1="19" y2="21"/></symbol>
+  <symbol id="i-tv" viewBox="0 0 24 24"><rect width="20" height="15" x="2" y="7" rx="2" ry="2"/><polyline points="17 2 12 7 7 2"/></symbol>
+  <symbol id="i-refresh" viewBox="0 0 24 24"><path d="M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8"/><path d="M21 3v5h-5"/><path d="M21 12a9 9 0 0 1-9 9 9.75 9.75 0 0 1-6.74-2.74L3 16"/><path d="M8 16H3v5"/></symbol>
+  <symbol id="i-calendar" viewBox="0 0 24 24"><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M16 2v4M8 2v4M3 10h18M8 14h.01M12 14h.01M16 14h.01M8 18h.01M12 18h.01M16 18h.01"/></symbol>
+  <symbol id="i-users" viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></symbol>
+  <symbol id="i-settings" viewBox="0 0 24 24"><path d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z"/><circle cx="12" cy="12" r="3"/></symbol>
+  <symbol id="i-alert" viewBox="0 0 24 24"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"/><path d="M12 9v4"/><path d="M12 17h.01"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></symbol>
+  <symbol id="i-moon" viewBox="0 0 24 24"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></symbol>
+  <symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></symbol>
+  <symbol id="i-ball" viewBox="0 0 24 24"><ellipse cx="12" cy="12" rx="10" ry="6" transform="rotate(-35 12 12)" style="fill:currentColor;stroke:none"/></symbol>
+</svg>
+
+<div class="app">
+  <div class="topbar">
+    <div class="brand"><svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="7" style="fill:var(--lime)"/><path d="M4 11h7M3 16h8M5 21h6" style="stroke:var(--live-fg);stroke-width:2.2;stroke-linecap:round"/><ellipse cx="20.5" cy="16" rx="8" ry="5" transform="rotate(-35 20.5 16)" style="fill:var(--live-fg)"/><path d="M17.8 18.2l5.4-4.4" style="stroke:var(--lime);stroke-width:1.4;stroke-linecap:round"/></svg><span class="wordmark">Sunday<b>Rush</b></span></div>
+    <button class="mode-toggle" id="mode-toggle" aria-label="Toggle light/dark"><svg class="i moon" aria-hidden="true"><use href="#i-moon"/></svg><svg class="i sun" aria-hidden="true"><use href="#i-sun"/></svg></button>
+  </div>
+
+  <header class="page-header">
+    <div>
+      <h1 class="week">Week 5</h1>
+      <p class="subtitle"><span class="auto-dot" aria-hidden="true"></span>Auto-updating · stats as of 2:47 PM</p>
+    </div>
+    <button class="btn"><svg class="i" aria-hidden="true"><use href="#i-refresh"/></svg>Refresh</button>
+  </header>
+  <div class="divider" aria-hidden="true"></div>
+
+  <div class="summary">
+    <div class="stat"><div class="stat-val">2</div><div class="stat-label">Games live</div></div>
+    <div class="stat"><div class="stat-val">5</div><div class="stat-label">Starters active</div></div>
+    <div class="stat"><div class="stat-val">2/3</div><div class="stat-label">Matchups leading</div></div>
+  </div>
+
+  <div class="chips" role="group" aria-label="Filters">
+    <button class="chip" aria-pressed="true"><svg class="i" aria-hidden="true"><use href="#i-check"/></svg>My starters</button>
+    <button class="chip" aria-pressed="true"><svg class="i" aria-hidden="true"><use href="#i-check"/></svg>Bench</button>
+    <button class="chip" aria-pressed="true"><svg class="i" aria-hidden="true"><use href="#i-check"/></svg>Opponents</button>
+    <button class="chip" aria-pressed="false"><svg class="i" aria-hidden="true"><use href="#i-check"/></svg>All NFL games</button>
+  </div>
+  <div class="sort-row">
+    <span>Sort</span>
+    <div class="segmented" role="group" aria-label="Sort games">
+      <button aria-pressed="true">Kickoff</button><button aria-pressed="false">Most players</button><button aria-pressed="false">Live first</button>
+    </div>
+  </div>
+
+  <main class="games">
+    <article class="game-card is-live" data-game="KC@BUF">
+      <div class="game-head">
+        <div class="scoreboard"><div class="team "><span class="abbr">KC</span><span class="score">21</span><svg class="i poss" aria-hidden="true"><use href="#i-ball"/></svg></div><div class="team "><span class="abbr">BUF</span><span class="score">17</span></div></div>
+        <div class="status"><span class="live-bug"><span class="dot"></span>LIVE</span><span class="clock">Q3 · 4:12</span><span class="tv"><svg class="i" aria-hidden="true"><use href="#i-tv"/></svg>CBS</span></div>
+      </div><div class="stake"><span>3 of your players</span><span>You <b>34.0</b> · Opp <b>18.4</b></span></div>
+      <div class="card-body">
+      <section class="section">
+        <h3 class="section-title">My players</h3>
+        <ul class="players">
+          <li class="player flash">
+            <div class="avatar pos-QB" aria-hidden="true">QB</div>
+            <div class="pinfo">
+              <div class="line1"><span class="pname">Patrick Mahomes</span><span class="pmeta">QB · KC</span></div>
+              <div class="line2">
+                <span class="badge own-starter"><svg class="i" aria-hidden="true"><use href="#i-star"/></svg>My starter</span>
+                <span class="league"><span class="prov">Y!</span>Dynasty Bros</span>
+              </div><div class="statline">19/27, 246 YD, 2 TD · 18 RUSH YD</div>
+            </div>
+            <div class="pts"><div class="pval">21.64</div><div class="plabel">pts</div><span class="delta">+6.0</span></div>
+          </li>
+          <li class="player">
+            <div class="avatar pos-RB" aria-hidden="true">RB</div>
+            <div class="pinfo">
+              <div class="line1"><span class="pname">James Cook</span><span class="pmeta">RB · BUF</span></div>
+              <div class="line2">
+                <span class="badge own-starter"><svg class="i" aria-hidden="true"><use href="#i-star"/></svg>My starter</span>
+                <span class="league"><span class="prov">C</span>Work League</span>
+              </div><div class="statline">14 CAR, 71 YD · 3 REC, 22 YD</div>
+            </div>
+            <div class="pts"><div class="pval">12.30</div><div class="plabel">pts</div></div>
+          </li>
+        </ul>
+      </section>
+      <section class="section">
+        <h3 class="section-title">My bench</h3>
+        <ul class="players">
+          <li class="player">
+            <div class="avatar pos-WR" aria-hidden="true">WR</div>
+            <div class="pinfo">
+              <div class="line1"><span class="pname">Khalil Shakir</span><span class="pmeta">WR · BUF</span></div>
+              <div class="line2">
+                <span class="badge own-bench"><svg class="i" aria-hidden="true"><use href="#i-clock"/></svg>My bench</span>
+                <span class="league"><span class="prov">Y!</span>Dynasty Bros</span>
+              </div><div class="statline">4 REC, 48 YD</div>
+            </div>
+            <div class="pts"><div class="pval">6.80</div><div class="plabel">pts</div></div>
+          </li>
+        </ul>
+      </section>
+      <section class="section">
+        <h3 class="section-title">Opponent players</h3>
+        <ul class="players">
+          <li class="player">
+            <div class="avatar pos-TE" aria-hidden="true">TE</div>
+            <div class="pinfo">
+              <div class="line1"><span class="pname">Travis Kelce</span><span class="pmeta">TE · KC</span></div>
+              <div class="line2">
+                <span class="badge own-opp"><svg class="i" aria-hidden="true"><use href="#i-swords"/></svg>Opponent</span>
+                <span class="league"><span class="prov">Y!</span>Family League</span>
+              </div><div class="statline">6 REC, 64 YD, 1 TD</div>
+            </div>
+            <div class="pts"><div class="pval">18.40</div><div class="plabel">pts</div></div>
+          </li>
+        </ul>
+      </section>
+      </div>
+    </article>
+    <article class="game-card is-live is-half" data-game="DAL@PHI">
+      <div class="game-head">
+        <div class="scoreboard"><div class="team "><span class="abbr">DAL</span><span class="score">10</span></div><div class="team "><span class="abbr">PHI</span><span class="score">14</span></div></div>
+        <div class="status"><span class="live-bug"><span class="dot"></span>LIVE</span><span class="clock">Halftime</span><span class="tv"><svg class="i" aria-hidden="true"><use href="#i-tv"/></svg>FOX</span></div>
+      </div><div class="stake"><span>2 of your players</span><span>You <b>23.3</b> · Opp <b>7.1</b></span></div>
+      <div class="card-body">
+      <section class="section">
+        <h3 class="section-title">My players</h3>
+        <ul class="players">
+          <li class="player">
+            <div class="avatar pos-QB" aria-hidden="true">QB</div>
+            <div class="pinfo">
+              <div class="line1"><span class="pname">Jalen Hurts</span><span class="pmeta">QB · PHI</span></div>
+              <div class="line2">
+                <span class="badge own-starter"><svg class="i" aria-hidden="true"><use href="#i-star"/></svg>My starter</span>
+                <span class="league"><span class="prov">Y!</span>Dynasty Bros</span>
+              </div><div class="statline">11/16, 132 YD, 1 TD · 1 RUSH TD</div>
+            </div>
+            <div class="pts"><div class="pval">13.92</div><div class="plabel">pts</div></div>
+          </li>
+          <li class="player">
+            <div class="avatar pos-WR" aria-hidden="true">WR</div>
+            <div class="pinfo">
+              <div class="line1"><span class="pname">A.J. Brown</span><span class="pmeta">WR · PHI</span></div>
+              <div class="line2">
+                <span class="badge own-starter"><svg class="i" aria-hidden="true"><use href="#i-star"/></svg>My starter</span>
+                <span class="league"><span class="prov">Y!</span>Family League</span>
+              </div><div class="statline">4 REC, 64 YD</div>
+            </div>
+            <div class="pts"><div class="pval">9.40</div><div class="plabel">pts</div></div>
+          </li>
+        </ul>
+      </section>
+      <section class="section">
+        <h3 class="section-title">Opponent players</h3>
+        <ul class="players">
+          <li class="player">
+            <div class="avatar pos-WR" aria-hidden="true">WR</div>
+            <div class="pinfo">
+              <div class="line1"><span class="pname">CeeDee Lamb</span><span class="pmeta">WR · DAL</span></div>
+              <div class="line2">
+                <span class="badge own-opp"><svg class="i" aria-hidden="true"><use href="#i-swords"/></svg>Opponent</span>
+                <span class="league"><span class="prov">C</span>Work League</span>
+              </div><div class="statline">5 REC, 51 YD</div>
+            </div>
+            <div class="pts"><div class="pval">7.10</div><div class="plabel">pts</div></div>
+          </li>
+        </ul>
+      </section>
+      </div>
+    </article>
+    <article class="game-card is-final" data-game="SF@SEA">
+      <div class="game-head">
+        <div class="scoreboard"><div class="team "><span class="abbr">SF</span><span class="score">27</span><span class="win-mark" aria-label="Winner">◀</span></div><div class="team lost"><span class="abbr">SEA</span><span class="score">20</span></div></div>
+        <div class="status"><span class="clock">Final</span><span class="tv"><svg class="i" aria-hidden="true"><use href="#i-tv"/></svg>FOX</span></div>
+      </div><div class="stake"><span>Final</span><span>You <b>+36.40</b> · Opp <b>+3.20</b></span></div>
+      <div class="card-body">
+      <section class="section">
+        <h3 class="section-title">My players</h3>
+        <ul class="players">
+          <li class="player">
+            <div class="avatar pos-RB" aria-hidden="true">RB</div>
+            <div class="pinfo">
+              <div class="line1"><span class="pname">Christian McCaffrey</span><span class="pmeta">RB · SF</span></div>
+              <div class="line2">
+                <span class="badge own-starter"><svg class="i" aria-hidden="true"><use href="#i-star"/></svg>My starter</span>
+                <span class="league"><span class="prov">Y!</span>Dynasty Bros</span>
+              </div><div class="statline">21 CAR, 112 YD, 1 TD · 4 REC, 36 YD</div>
+            </div>
+            <div class="pts"><div class="pval">24.80</div><div class="plabel">pts</div></div>
+          </li>
+        </ul>
+      </section>
+      <section class="section">
+        <h3 class="section-title">My bench</h3>
+        <ul class="players">
+          <li class="player">
+            <div class="avatar pos-WR" aria-hidden="true">WR</div>
+            <div class="pinfo">
+              <div class="line1"><span class="pname">Jaxon Smith-Njigba</span><span class="pmeta">WR · SEA</span></div>
+              <div class="line2">
+                <span class="badge own-bench"><svg class="i" aria-hidden="true"><use href="#i-clock"/></svg>My bench</span>
+                <span class="league"><span class="prov">Y!</span>Family League</span>
+              </div><div class="statline">7 REC, 86 YD</div>
+            </div>
+            <div class="pts"><div class="pval">11.60</div><div class="plabel">pts</div></div>
+          </li>
+        </ul>
+      </section>
+      <section class="section">
+        <h3 class="section-title">Opponent players</h3>
+        <ul class="players">
+          <li class="player">
+            <div class="avatar pos-TE" aria-hidden="true">TE</div>
+            <div class="pinfo">
+              <div class="line1"><span class="pname">George Kittle</span><span class="pmeta">TE · SF</span></div>
+              <div class="line2">
+                <span class="badge own-opp"><svg class="i" aria-hidden="true"><use href="#i-swords"/></svg>Opponent</span>
+                <span class="league"><span class="prov">Y!</span>Dynasty Bros</span>
+              </div><div class="statline">2 REC, 12 YD</div>
+            </div>
+            <div class="pts"><div class="pval">3.20</div><div class="plabel">pts</div></div>
+          </li>
+        </ul>
+      </section>
+      </div>
+    </article>
+    <article class="game-card is-upcoming" data-game="MIA@LAC">
+      <div class="game-head">
+        <div class="scoreboard"><div class="team "><span class="abbr">MIA</span></div><div class="team "><span class="abbr">LAC</span></div></div>
+        <div class="status"><span class="kickoff">Sun 4:25 PM</span><span class="tv"><svg class="i" aria-hidden="true"><use href="#i-tv"/></svg>CBS</span></div>
+      </div><div class="stake"><span>3 of your players</span><span>Kicks off in 1h 38m</span></div>
+      <div class="card-body">
+      <section class="section">
+        <h3 class="section-title">My players</h3>
+        <ul class="players">
+          <li class="player">
+            <div class="avatar pos-WR" aria-hidden="true">WR</div>
+            <div class="pinfo">
+              <div class="line1"><span class="pname">Tyreek Hill</span><span class="pmeta">WR · MIA</span></div>
+              <div class="line2">
+                <span class="badge own-starter"><svg class="i" aria-hidden="true"><use href="#i-star"/></svg>My starter</span>
+                <span class="league"><span class="prov">Y!</span>Family League</span>
+              </div>
+            </div>
+            <div class="pts"><div class="pval">—</div><div class="plabel">4:25 PM</div></div>
+          </li>
+          <li class="player">
+            <div class="avatar pos-QB" aria-hidden="true">QB</div>
+            <div class="pinfo">
+              <div class="line1"><span class="pname">Justin Herbert</span><span class="pmeta">QB · LAC</span><span class="injury" title="Questionable">Q</span></div>
+              <div class="line2">
+                <span class="badge own-starter"><svg class="i" aria-hidden="true"><use href="#i-star"/></svg>My starter</span>
+                <span class="league"><span class="prov">C</span>Work League</span>
+              </div>
+            </div>
+            <div class="pts"><div class="pval">—</div><div class="plabel">4:25 PM</div></div>
+          </li>
+        </ul>
+      </section>
+      <section class="section">
+        <h3 class="section-title">Opponent players</h3>
+        <ul class="players">
+          <li class="player">
+            <div class="avatar pos-RB" aria-hidden="true">RB</div>
+            <div class="pinfo">
+              <div class="line1"><span class="pname">De'Von Achane</span><span class="pmeta">RB · MIA</span></div>
+              <div class="line2">
+                <span class="badge own-opp"><svg class="i" aria-hidden="true"><use href="#i-swords"/></svg>Opponent</span>
+                <span class="league"><span class="prov">Y!</span>Dynasty Bros</span>
+              </div>
+            </div>
+            <div class="pts"><div class="pval">—</div><div class="plabel">4:25 PM</div></div>
+          </li>
+        </ul>
+      </section>
+      </div>
+    </article>
+    <article class="game-card is-upcoming is-empty" data-game="NYG@GB">
+      <div class="game-head">
+        <div class="scoreboard"><div class="team "><span class="abbr">NYG</span></div><div class="team "><span class="abbr">GB</span></div></div>
+        <div class="status"><span class="kickoff">Sun 8:20 PM</span><span class="tv"><svg class="i" aria-hidden="true"><use href="#i-tv"/></svg>NBC</span></div>
+      </div>
+      <div class="card-body">
+        <p class="empty-note">None of your players are in this game.</p>
+      </div>
+    </article>
+
+    <article class="game-card group-card">
+      <h2 class="group-title">Bye week, free agent, or unmatched</h2>
+      <ul class="players">
+          <li class="player">
+            <div class="avatar pos-WR" aria-hidden="true">WR</div>
+            <div class="pinfo">
+              <div class="line1"><span class="pname">Puka Nacua</span><span class="pmeta">WR · LAR</span></div>
+              <div class="line2">
+                <span class="badge own-starter"><svg class="i" aria-hidden="true"><use href="#i-star"/></svg>My starter</span>
+                <span class="league"><span class="prov">Y!</span>Family League</span>
+              </div><div class="statline">Bye week</div>
+            </div>
+            <div class="pts"><div class="pval">—</div><div class="plabel">bye</div></div>
+          </li>
+          <li class="player">
+            <div class="avatar pos-RB" aria-hidden="true">RB</div>
+            <div class="pinfo">
+              <div class="line1"><span class="pname">D. Robinson</span><span class="pmeta">RB</span></div>
+              <div class="line2">
+                <span class="badge own-bench"><svg class="i" aria-hidden="true"><use href="#i-clock"/></svg>My bench</span>
+                <span class="league"><span class="prov">C</span>Work League</span>
+              </div><div class="unmapped"><svg class="i" aria-hidden="true"><use href="#i-alert"/></svg>Unmapped player — couldn&rsquo;t match to an NFL player</div>
+            </div>
+            <div class="pts"><div class="pval">—</div><div class="plabel">pts unavailable</div></div>
+          </li>
+      </ul>
+    </article>
+  </main>
+</div>
+
+<nav class="bottom-nav" aria-label="Primary">
+  <ul>
+    <li><a href="#" aria-current="page"><svg class="i" aria-hidden="true"><use href="#i-calendar"/></svg>Games</a></li>
+    <li><a href="#"><svg class="i" aria-hidden="true"><use href="#i-swords"/></svg>Matchups</a></li>
+    <li><a href="#"><svg class="i" aria-hidden="true"><use href="#i-users"/></svg>Teams</a></li>
+    <li><a href="#"><svg class="i" aria-hidden="true"><use href="#i-settings"/></svg>Settings</a></li>
+  </ul>
+</nav>
+
+<script>
+  // Mockup-only: ?mode=light|dark overrides the default; the button flips it.
+  const root = document.documentElement;
+  const forced = new URLSearchParams(location.search).get("mode");
+  if (forced === "light" || forced === "dark") root.dataset.mode = forced;
+  document.getElementById("mode-toggle").onclick = () => {
+    root.dataset.mode = root.dataset.mode === "dark" ? "light" : "dark";
+  };
+  // Filter chips and sort buttons toggle visually only.
+  document.querySelectorAll(".chip").forEach((c) => (c.onclick = () => c.setAttribute("aria-pressed", c.getAttribute("aria-pressed") !== "true")));
+  document.querySelectorAll(".segmented button").forEach((b) => (b.onclick = () => {
+    b.parentElement.querySelectorAll("button").forEach((x) => x.setAttribute("aria-pressed", x === b));
+  }));
+</script>
+</body>
+</html>

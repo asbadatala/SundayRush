@@ -31,7 +31,7 @@ function Score({ name, owner, score, projected, leading }: {
         {owner && <div className="truncate text-xs text-muted-foreground">{owner}</div>}
       </div>
       <div className="shrink-0 text-right">
-        <div className={cn("font-mono text-xl tabular-nums", leading && "font-bold")}>{formatPoints(score)}</div>
+        <div className={cn("font-heading text-2xl font-semibold tabular-nums", leading && "font-bold")}>{formatPoints(score)}</div>
         {projected != null && <div className="text-xs text-muted-foreground">proj {projected.toFixed(1)}</div>}
       </div>
     </div>

@@ -19,7 +19,7 @@ function Lineup({ side, rows, label }: { side: MatchupSide | null; rows: Row[]; 
           <div className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">{label}</div>
           <h2 className="truncate text-lg font-bold">{side?.name ?? "—"}</h2>
         </div>
-        <div className="font-mono text-2xl font-bold tabular-nums">{formatPoints(side?.score ?? null)}</div>
+        <div className="font-heading text-3xl font-semibold tabular-nums">{formatPoints(side?.score ?? null)}</div>
       </div>
       {rows.length ? (
         <ul className="divide-y">

@@ -114,4 +114,51 @@ The browser stays same-origin through the Next rewrites. The Yahoo redirect URI 
 
 ## ADR-011 — Account/authentication provider (P1)
 
-**Status:** open. Choose when P1 accounts start (candidates: Auth.js, Clerk, Supabase Auth). The anonymous-user design in ADR-004 is the migration path.
+**Status:** superseded by ADR-013.
+
+## ADR-012 — ESPN: public leagues only in P1
+
+**Status:** accepted (2026-10-04). ESPN import supports leagues viewable to the public, discovered by league ID. When ESPN returns 401/403, the app returns `PRIVATE_LEAGUE_UNSUPPORTED` and points the user to Custom Team. Cookie-based (`espn_s2`/`SWID`) private access is deferred. Resolves ADR-010 for P1.
+
+## ADR-013 — Sign-in: Google, implemented in FastAPI
+
+**Status:** accepted (2026-10-04).
+
+- Google OIDC (`openid email profile`) runs in FastAPI on top of the existing `ff_session` model. A `user_identity` row links a Google subject to a `User`.
+- **Why not Auth.js:** it would add a second session in Next.js plus a JWT bridge to the API.
+- Anonymous use stays fully supported.
+- Apple sign-in and email magic links are possible later additions as new identity kinds.
+
+## ADR-014 — Hosting: Vercel (supersedes ADR-009)
+
+**Status:** accepted (2026-10-04). Deploying still needs the owner's go-ahead.
+
+- **Projects:** two Vercel projects. `apps/web` runs Next.js and owns the domain. `apps/api` runs FastAPI on Vercel's Python runtime.
+- **Same origin:** the browser stays same-origin through the existing Next rewrites.
+- **Database:** Postgres from the Vercel Marketplace (Neon, pooled connection, `NullPool`, branch per preview).
+- **Serverless:**
+  - Migrations run from CI, not on boot.
+  - The daily player sync runs as a Vercel Cron Job.
+  - Rate limiting moves to shared storage (Upstash Redis).
+- See `p1_plan.md` Phase 6.
+
+## ADR-015 — Screenshot extraction: OpenAI vision model
+
+**Status:** accepted (2026-10-04).
+
+- **Model:** a small vision-capable OpenAI model through the OpenAI API with Structured Outputs. The model is configured by `OPENAI_MODEL`.
+- **Images:** processed in memory and never stored or logged.
+- **Limits:** per-session rate limits and a daily spend cap.
+- **Resolution:** the canonical player resolver produces candidates, and the user confirms every match below the confidence threshold.
+
+## ADR-016 — Yahoo deferred out of P1
+
+**Status:** accepted (2026-10-04).
+
+- **Why:** Yahoo Fantasy Sports API access now requires Yahoo's application approval (pending). Until then, data calls return 403.
+- **In P1:** the P0 Yahoo code stays, but it's hidden behind `YAHOO_ENABLED=false`.
+- **When approved:** Yahoo returns with attribution, a separate production Yahoo app, and a real-league check.
+
+## ADR-017 — Fleaflicker deferred to P2
+
+**Status:** accepted (2026-10-04). P1 ships Sleeper and ESPN public leagues. When Fleaflicker comes in P2, it will be another `FantasyProviderAdapter` built on its public API (`FetchUserLeagues`, `FetchLeagueRosters`, `FetchLeagueScoreboard`, `FetchLeagueRules`, `FetchLeagueStandings`).

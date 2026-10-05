@@ -6,6 +6,8 @@ import type { NextConfig } from "next";
 const API_URL = process.env.API_URL ?? "http://127.0.0.1:8000";
 
 const nextConfig: NextConfig = {
+  // Hide the dev-only "N" indicator; it overlaps the bottom nav. Compile/runtime errors still surface.
+  devIndicators: false,
   async rewrites() {
     return [{ source: "/api/:path*", destination: `${API_URL}/api/:path*` }];
   },
