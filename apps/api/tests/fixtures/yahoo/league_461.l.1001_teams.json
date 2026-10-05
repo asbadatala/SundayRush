@@ -1,0 +1,331 @@
+{
+ "fantasy_content": {
+  "xml:lang": "en-US",
+  "yahoo:uri": "/fantasy/v2/x",
+  "league": [
+   {
+    "league_key": "461.l.1001",
+    "league_id": "1001",
+    "name": "Sunday Funday",
+    "url": "https://football.fantasysports.yahoo.com/f1/x",
+    "logo_url": false,
+    "draft_status": "postdraft",
+    "num_teams": 4,
+    "edit_key": "4",
+    "weekly_deadline": "",
+    "league_update_timestamp": "1790000000",
+    "scoring_type": "head",
+    "league_type": "private",
+    "renew": "",
+    "renewed": "",
+    "felo_tier": "gold",
+    "iris_group_chat_id": "",
+    "short_invitation_url": "",
+    "allow_add_to_dl_extra_pos": 1,
+    "is_pro_league": "0",
+    "is_cash_league": "0",
+    "current_week": 4,
+    "start_week": "1",
+    "start_date": "2026-09-09",
+    "end_week": "17",
+    "end_date": "2026-12-28",
+    "is_finished": 0,
+    "is_plus_league": "0",
+    "game_code": "nfl",
+    "season": "2026"
+   },
+   {
+    "teams": {
+     "0": {
+      "team": [
+       [
+        {
+         "team_key": "461.l.1001.t.1"
+        },
+        {
+         "team_id": "1"
+        },
+        {
+         "name": "Ankit's Aces"
+        },
+        [],
+        {
+         "is_owned_by_current_login": 1
+        },
+        {
+         "url": "https://football.fantasysports.yahoo.com/"
+        },
+        {
+         "team_logos": [
+          {
+           "team_logo": {
+            "size": "large",
+            "url": ""
+           }
+          }
+         ]
+        },
+        [],
+        {
+         "waiver_priority": 1
+        },
+        [],
+        {
+         "number_of_moves": 3
+        },
+        {
+         "number_of_trades": 0
+        },
+        {
+         "roster_adds": {
+          "coverage_type": "week",
+          "coverage_value": 4,
+          "value": "0"
+         }
+        },
+        [],
+        {
+         "league_scoring_type": "head"
+        },
+        [],
+        [],
+        {
+         "has_draft_grade": 0
+        },
+        [],
+        [],
+        {
+         "managers": [
+          {
+           "manager": {
+            "manager_id": "1",
+            "nickname": "Ankit",
+            "guid": "GUID1",
+            "is_current_login": "1",
+            "is_commissioner": "0"
+           }
+          }
+         ]
+        }
+       ]
+      ]
+     },
+     "1": {
+      "team": [
+       [
+        {
+         "team_key": "461.l.1001.t.2"
+        },
+        {
+         "team_id": "2"
+        },
+        {
+         "name": "Gridiron Gurus"
+        },
+        [],
+        {
+         "url": "https://football.fantasysports.yahoo.com/"
+        },
+        {
+         "team_logos": [
+          {
+           "team_logo": {
+            "size": "large",
+            "url": ""
+           }
+          }
+         ]
+        },
+        [],
+        {
+         "waiver_priority": 2
+        },
+        [],
+        {
+         "number_of_moves": 3
+        },
+        {
+         "number_of_trades": 0
+        },
+        {
+         "roster_adds": {
+          "coverage_type": "week",
+          "coverage_value": 4,
+          "value": "0"
+         }
+        },
+        [],
+        {
+         "league_scoring_type": "head"
+        },
+        [],
+        [],
+        {
+         "has_draft_grade": 0
+        },
+        [],
+        [],
+        {
+         "managers": [
+          {
+           "manager": {
+            "manager_id": "2",
+            "nickname": "Sam",
+            "guid": "GUID2",
+            "is_commissioner": "0"
+           }
+          }
+         ]
+        }
+       ]
+      ]
+     },
+     "2": {
+      "team": [
+       [
+        {
+         "team_key": "461.l.1001.t.3"
+        },
+        {
+         "team_id": "3"
+        },
+        {
+         "name": "Fourth and Forever"
+        },
+        [],
+        {
+         "url": "https://football.fantasysports.yahoo.com/"
+        },
+        {
+         "team_logos": [
+          {
+           "team_logo": {
+            "size": "large",
+            "url": ""
+           }
+          }
+         ]
+        },
+        [],
+        {
+         "waiver_priority": 3
+        },
+        [],
+        {
+         "number_of_moves": 3
+        },
+        {
+         "number_of_trades": 0
+        },
+        {
+         "roster_adds": {
+          "coverage_type": "week",
+          "coverage_value": 4,
+          "value": "0"
+         }
+        },
+        [],
+        {
+         "league_scoring_type": "head"
+        },
+        [],
+        [],
+        {
+         "has_draft_grade": 0
+        },
+        [],
+        [],
+        {
+         "managers": [
+          {
+           "manager": {
+            "manager_id": "3",
+            "nickname": "Lee",
+            "guid": "GUID3",
+            "is_commissioner": "0"
+           }
+          }
+         ]
+        }
+       ]
+      ]
+     },
+     "3": {
+      "team": [
+       [
+        {
+         "team_key": "461.l.1001.t.4"
+        },
+        {
+         "team_id": "4"
+        },
+        {
+         "name": "Hail Marys"
+        },
+        [],
+        {
+         "url": "https://football.fantasysports.yahoo.com/"
+        },
+        {
+         "team_logos": [
+          {
+           "team_logo": {
+            "size": "large",
+            "url": ""
+           }
+          }
+         ]
+        },
+        [],
+        {
+         "waiver_priority": 4
+        },
+        [],
+        {
+         "number_of_moves": 3
+        },
+        {
+         "number_of_trades": 0
+        },
+        {
+         "roster_adds": {
+          "coverage_type": "week",
+          "coverage_value": 4,
+          "value": "0"
+         }
+        },
+        [],
+        {
+         "league_scoring_type": "head"
+        },
+        [],
+        [],
+        {
+         "has_draft_grade": 0
+        },
+        [],
+        [],
+        {
+         "managers": [
+          {
+           "manager": {
+            "manager_id": "4",
+            "nickname": "Jo",
+            "guid": "GUID4",
+            "is_commissioner": "0"
+           }
+          }
+         ]
+        }
+       ]
+      ]
+     },
+     "count": 4
+    }
+   }
+  ],
+  "time": "42.1ms",
+  "copyright": "Data provided by Yahoo! and STATS, LLC",
+  "refresh_rate": "60"
+ }
+}

@@ -1,0 +1,1064 @@
+{
+ "events": [
+  {
+   "competitions": [
+    {
+     "broadcasts": [
+      {
+       "market": "national",
+       "names": [
+        "FOX"
+       ]
+      }
+     ],
+     "competitors": [
+      {
+       "homeAway": "home",
+       "score": "9",
+       "team": {
+        "abbreviation": "MIN"
+       }
+      },
+      {
+       "homeAway": "away",
+       "score": "0",
+       "team": {
+        "abbreviation": "MIA"
+       }
+      }
+     ],
+     "date": "2026-10-04T20:05Z",
+     "geoBroadcasts": [
+      {
+       "lang": "en",
+       "market": {
+        "id": "1",
+        "type": "National"
+       },
+       "media": {
+        "shortName": "FOX"
+       },
+       "region": "us",
+       "type": {
+        "id": "1",
+        "shortName": "TV"
+       }
+      }
+     ],
+     "id": "401872974"
+    }
+   ],
+   "date": "2026-10-04T20:05Z",
+   "id": "401872974",
+   "shortName": "MIA @ MIN",
+   "status": {
+    "clock": 0.0,
+    "displayClock": "0:00",
+    "period": 2,
+    "type": {
+     "completed": false,
+     "description": "Halftime",
+     "detail": "Halftime",
+     "id": "23",
+     "name": "STATUS_HALFTIME",
+     "shortDetail": "Halftime",
+     "state": "in"
+    }
+   }
+  },
+  {
+   "competitions": [
+    {
+     "broadcasts": [
+      {
+       "market": "national",
+       "names": [
+        "CBS"
+       ]
+      }
+     ],
+     "competitors": [
+      {
+       "homeAway": "home",
+       "score": "10",
+       "team": {
+        "abbreviation": "LV"
+       }
+      },
+      {
+       "homeAway": "away",
+       "score": "10",
+       "team": {
+        "abbreviation": "KC"
+       }
+      }
+     ],
+     "date": "2026-10-04T20:25Z",
+     "geoBroadcasts": [
+      {
+       "lang": "en",
+       "market": {
+        "id": "1",
+        "type": "National"
+       },
+       "media": {
+        "shortName": "CBS"
+       },
+       "region": "us",
+       "type": {
+        "id": "1",
+        "shortName": "TV"
+       }
+      }
+     ],
+     "id": "401872976"
+    }
+   ],
+   "date": "2026-10-04T20:25Z",
+   "id": "401872976",
+   "shortName": "KC @ LV",
+   "status": {
+    "clock": 22.0,
+    "displayClock": "0:22",
+    "period": 2,
+    "type": {
+     "completed": false,
+     "description": "In Progress",
+     "detail": "0:22 - 2nd Quarter",
+     "id": "2",
+     "name": "STATUS_IN_PROGRESS",
+     "shortDetail": "0:22 - 2nd",
+     "state": "in"
+    }
+   }
+  },
+  {
+   "competitions": [
+    {
+     "broadcasts": [
+      {
+       "market": "national",
+       "names": [
+        "CBS"
+       ]
+      }
+     ],
+     "competitors": [
+      {
+       "homeAway": "home",
+       "score": "3",
+       "team": {
+        "abbreviation": "SF"
+       }
+      },
+      {
+       "homeAway": "away",
+       "score": "3",
+       "team": {
+        "abbreviation": "DEN"
+       }
+      }
+     ],
+     "date": "2026-10-04T20:25Z",
+     "geoBroadcasts": [
+      {
+       "lang": "en",
+       "market": {
+        "id": "1",
+        "type": "National"
+       },
+       "media": {
+        "shortName": "CBS"
+       },
+       "region": "us",
+       "type": {
+        "id": "1",
+        "shortName": "TV"
+       }
+      }
+     ],
+     "id": "401872975"
+    }
+   ],
+   "date": "2026-10-04T20:25Z",
+   "id": "401872975",
+   "shortName": "DEN @ SF",
+   "status": {
+    "clock": 51.0,
+    "displayClock": "0:51",
+    "period": 2,
+    "type": {
+     "completed": false,
+     "description": "In Progress",
+     "detail": "0:51 - 2nd Quarter",
+     "id": "2",
+     "name": "STATUS_IN_PROGRESS",
+     "shortDetail": "0:51 - 2nd",
+     "state": "in"
+    }
+   }
+  },
+  {
+   "competitions": [
+    {
+     "broadcasts": [
+      {
+       "market": "national",
+       "names": [
+        "CBS"
+       ]
+      }
+     ],
+     "competitors": [
+      {
+       "homeAway": "home",
+       "score": "13",
+       "team": {
+        "abbreviation": "SEA"
+       }
+      },
+      {
+       "homeAway": "away",
+       "score": "3",
+       "team": {
+        "abbreviation": "LAC"
+       }
+      }
+     ],
+     "date": "2026-10-04T20:25Z",
+     "geoBroadcasts": [
+      {
+       "lang": "en",
+       "market": {
+        "id": "1",
+        "type": "National"
+       },
+       "media": {
+        "shortName": "CBS"
+       },
+       "region": "us",
+       "type": {
+        "id": "1",
+        "shortName": "TV"
+       }
+      }
+     ],
+     "id": "401872977"
+    }
+   ],
+   "date": "2026-10-04T20:25Z",
+   "id": "401872977",
+   "shortName": "LAC @ SEA",
+   "status": {
+    "clock": 206.0,
+    "displayClock": "3:26",
+    "period": 2,
+    "type": {
+     "completed": false,
+     "description": "In Progress",
+     "detail": "3:26 - 2nd Quarter",
+     "id": "2",
+     "name": "STATUS_IN_PROGRESS",
+     "shortDetail": "3:26 - 2nd",
+     "state": "in"
+    }
+   }
+  },
+  {
+   "competitions": [
+    {
+     "broadcasts": [
+      {
+       "market": "national",
+       "names": [
+        "NFL Net"
+       ]
+      }
+     ],
+     "competitors": [
+      {
+       "homeAway": "home",
+       "score": "13",
+       "team": {
+        "abbreviation": "WSH"
+       }
+      },
+      {
+       "homeAway": "away",
+       "score": "30",
+       "team": {
+        "abbreviation": "IND"
+       }
+      }
+     ],
+     "date": "2026-10-04T13:30Z",
+     "geoBroadcasts": [
+      {
+       "lang": "en",
+       "market": {
+        "id": "1",
+        "type": "National"
+       },
+       "media": {
+        "darkLogo": "https://a.espncdn.com/guid/8281947e-bd6c-3a8a-9b1d-6fc957d1709a/logos/default-dark.png",
+        "logo": "https://a.espncdn.com/guid/8281947e-bd6c-3a8a-9b1d-6fc957d1709a/logos/default.png",
+        "shortName": "NFL Net"
+       },
+       "region": "us",
+       "type": {
+        "id": "1",
+        "shortName": "TV"
+       }
+      }
+     ],
+     "id": "401872965"
+    }
+   ],
+   "date": "2026-10-04T13:30Z",
+   "id": "401872965",
+   "shortName": "IND VS WSH",
+   "status": {
+    "clock": 0.0,
+    "displayClock": "0:00",
+    "period": 4,
+    "type": {
+     "completed": true,
+     "description": "Final",
+     "detail": "Final",
+     "id": "3",
+     "name": "STATUS_FINAL",
+     "shortDetail": "Final",
+     "state": "post"
+    }
+   }
+  },
+  {
+   "competitions": [
+    {
+     "broadcasts": [
+      {
+       "market": "national",
+       "names": [
+        "CBS"
+       ]
+      }
+     ],
+     "competitors": [
+      {
+       "homeAway": "home",
+       "score": "26",
+       "team": {
+        "abbreviation": "BUF"
+       }
+      },
+      {
+       "homeAway": "away",
+       "score": "29",
+       "team": {
+        "abbreviation": "NE"
+       }
+      }
+     ],
+     "date": "2026-10-04T17:00Z",
+     "geoBroadcasts": [
+      {
+       "lang": "en",
+       "market": {
+        "id": "1",
+        "type": "National"
+       },
+       "media": {
+        "shortName": "CBS"
+       },
+       "region": "us",
+       "type": {
+        "id": "1",
+        "shortName": "TV"
+       }
+      }
+     ],
+     "id": "401872971"
+    }
+   ],
+   "date": "2026-10-04T17:00Z",
+   "id": "401872971",
+   "shortName": "NE @ BUF",
+   "status": {
+    "clock": 0.0,
+    "displayClock": "0:00",
+    "period": 4,
+    "type": {
+     "completed": true,
+     "description": "Final",
+     "detail": "Final",
+     "id": "3",
+     "name": "STATUS_FINAL",
+     "shortDetail": "Final",
+     "state": "post"
+    }
+   }
+  },
+  {
+   "competitions": [
+    {
+     "broadcasts": [
+      {
+       "market": "national",
+       "names": [
+        "FOX"
+       ]
+      }
+     ],
+     "competitors": [
+      {
+       "homeAway": "home",
+       "score": "23",
+       "team": {
+        "abbreviation": "CHI"
+       }
+      },
+      {
+       "homeAway": "away",
+       "score": "12",
+       "team": {
+        "abbreviation": "NYJ"
+       }
+      }
+     ],
+     "date": "2026-10-04T17:00Z",
+     "geoBroadcasts": [
+      {
+       "lang": "en",
+       "market": {
+        "id": "1",
+        "type": "National"
+       },
+       "media": {
+        "shortName": "FOX"
+       },
+       "region": "us",
+       "type": {
+        "id": "1",
+        "shortName": "TV"
+       }
+      }
+     ],
+     "id": "401872972"
+    }
+   ],
+   "date": "2026-10-04T17:00Z",
+   "id": "401872972",
+   "shortName": "NYJ @ CHI",
+   "status": {
+    "clock": 0.0,
+    "displayClock": "0:00",
+    "period": 4,
+    "type": {
+     "completed": true,
+     "description": "Final",
+     "detail": "Final",
+     "id": "3",
+     "name": "STATUS_FINAL",
+     "shortDetail": "Final",
+     "state": "post"
+    }
+   }
+  },
+  {
+   "competitions": [
+    {
+     "broadcasts": [
+      {
+       "market": "national",
+       "names": [
+        "CBS"
+       ]
+      }
+     ],
+     "competitors": [
+      {
+       "homeAway": "home",
+       "score": "17",
+       "team": {
+        "abbreviation": "CIN"
+       }
+      },
+      {
+       "homeAway": "away",
+       "score": "22",
+       "team": {
+        "abbreviation": "JAX"
+       }
+      }
+     ],
+     "date": "2026-10-04T17:00Z",
+     "geoBroadcasts": [
+      {
+       "lang": "en",
+       "market": {
+        "id": "1",
+        "type": "National"
+       },
+       "media": {
+        "shortName": "CBS"
+       },
+       "region": "us",
+       "type": {
+        "id": "1",
+        "shortName": "TV"
+       }
+      }
+     ],
+     "id": "401872969"
+    }
+   ],
+   "date": "2026-10-04T17:00Z",
+   "id": "401872969",
+   "shortName": "JAX @ CIN",
+   "status": {
+    "clock": 0.0,
+    "displayClock": "0:00",
+    "period": 4,
+    "type": {
+     "completed": true,
+     "description": "Final",
+     "detail": "Final",
+     "id": "3",
+     "name": "STATUS_FINAL",
+     "shortDetail": "Final",
+     "state": "post"
+    }
+   }
+  },
+  {
+   "competitions": [
+    {
+     "broadcasts": [
+      {
+       "market": "national",
+       "names": [
+        "CBS"
+       ]
+      }
+     ],
+     "competitors": [
+      {
+       "homeAway": "home",
+       "score": "36",
+       "team": {
+        "abbreviation": "NYG"
+       }
+      },
+      {
+       "homeAway": "away",
+       "score": "24",
+       "team": {
+        "abbreviation": "ARI"
+       }
+      }
+     ],
+     "date": "2026-10-04T17:00Z",
+     "geoBroadcasts": [
+      {
+       "lang": "en",
+       "market": {
+        "id": "1",
+        "type": "National"
+       },
+       "media": {
+        "shortName": "CBS"
+       },
+       "region": "us",
+       "type": {
+        "id": "1",
+        "shortName": "TV"
+       }
+      }
+     ],
+     "id": "401872966"
+    }
+   ],
+   "date": "2026-10-04T17:00Z",
+   "id": "401872966",
+   "shortName": "ARI @ NYG",
+   "status": {
+    "clock": 0.0,
+    "displayClock": "0:00",
+    "period": 4,
+    "type": {
+     "completed": true,
+     "description": "Final",
+     "detail": "Final",
+     "id": "3",
+     "name": "STATUS_FINAL",
+     "shortDetail": "Final",
+     "state": "post"
+    }
+   }
+  },
+  {
+   "competitions": [
+    {
+     "broadcasts": [
+      {
+       "market": "national",
+       "names": [
+        "FOX"
+       ]
+      }
+     ],
+     "competitors": [
+      {
+       "homeAway": "home",
+       "score": "20",
+       "team": {
+        "abbreviation": "PHI"
+       }
+      },
+      {
+       "homeAway": "away",
+       "score": "24",
+       "team": {
+        "abbreviation": "LAR"
+       }
+      }
+     ],
+     "date": "2026-10-04T17:00Z",
+     "geoBroadcasts": [
+      {
+       "lang": "en",
+       "market": {
+        "id": "1",
+        "type": "National"
+       },
+       "media": {
+        "shortName": "FOX"
+       },
+       "region": "us",
+       "type": {
+        "id": "1",
+        "shortName": "TV"
+       }
+      }
+     ],
+     "id": "401872970"
+    }
+   ],
+   "date": "2026-10-04T17:00Z",
+   "id": "401872970",
+   "shortName": "LAR @ PHI",
+   "status": {
+    "clock": 0.0,
+    "displayClock": "0:00",
+    "period": 4,
+    "type": {
+     "completed": true,
+     "description": "Final",
+     "detail": "Final",
+     "id": "3",
+     "name": "STATUS_FINAL",
+     "shortDetail": "Final",
+     "state": "post"
+    }
+   }
+  },
+  {
+   "competitions": [
+    {
+     "broadcasts": [
+      {
+       "market": "national",
+       "names": [
+        "FOX"
+       ]
+      }
+     ],
+     "competitors": [
+      {
+       "homeAway": "home",
+       "score": "14",
+       "team": {
+        "abbreviation": "TB"
+       }
+      },
+      {
+       "homeAway": "away",
+       "score": "17",
+       "team": {
+        "abbreviation": "GB"
+       }
+      }
+     ],
+     "date": "2026-10-04T17:00Z",
+     "geoBroadcasts": [
+      {
+       "lang": "en",
+       "market": {
+        "id": "1",
+        "type": "National"
+       },
+       "media": {
+        "shortName": "FOX"
+       },
+       "region": "us",
+       "type": {
+        "id": "1",
+        "shortName": "TV"
+       }
+      }
+     ],
+     "id": "401872968"
+    }
+   ],
+   "date": "2026-10-04T17:00Z",
+   "id": "401872968",
+   "shortName": "GB @ TB",
+   "status": {
+    "clock": 0.0,
+    "displayClock": "0:00",
+    "period": 4,
+    "type": {
+     "completed": true,
+     "description": "Final",
+     "detail": "Final",
+     "id": "3",
+     "name": "STATUS_FINAL",
+     "shortDetail": "Final",
+     "state": "post"
+    }
+   }
+  },
+  {
+   "competitions": [
+    {
+     "broadcasts": [
+      {
+       "market": "national",
+       "names": [
+        "CBS"
+       ]
+      }
+     ],
+     "competitors": [
+      {
+       "homeAway": "home",
+       "score": "24",
+       "team": {
+        "abbreviation": "BAL"
+       }
+      },
+      {
+       "homeAway": "away",
+       "score": "18",
+       "team": {
+        "abbreviation": "TEN"
+       }
+      }
+     ],
+     "date": "2026-10-04T17:00Z",
+     "geoBroadcasts": [
+      {
+       "lang": "en",
+       "market": {
+        "id": "1",
+        "type": "National"
+       },
+       "media": {
+        "shortName": "CBS"
+       },
+       "region": "us",
+       "type": {
+        "id": "1",
+        "shortName": "TV"
+       }
+      }
+     ],
+     "id": "401872973"
+    }
+   ],
+   "date": "2026-10-04T17:00Z",
+   "id": "401872973",
+   "shortName": "TEN @ BAL",
+   "status": {
+    "clock": 0.0,
+    "displayClock": "0:00",
+    "period": 4,
+    "type": {
+     "completed": true,
+     "description": "Final",
+     "detail": "Final",
+     "id": "3",
+     "name": "STATUS_FINAL",
+     "shortDetail": "Final",
+     "state": "post"
+    }
+   }
+  },
+  {
+   "competitions": [
+    {
+     "broadcasts": [
+      {
+       "market": "national",
+       "names": [
+        "FOX"
+       ]
+      }
+     ],
+     "competitors": [
+      {
+       "homeAway": "home",
+       "score": "30",
+       "team": {
+        "abbreviation": "HOU"
+       }
+      },
+      {
+       "homeAway": "away",
+       "score": "34",
+       "team": {
+        "abbreviation": "DAL"
+       }
+      }
+     ],
+     "date": "2026-10-04T17:00Z",
+     "geoBroadcasts": [
+      {
+       "lang": "en",
+       "market": {
+        "id": "1",
+        "type": "National"
+       },
+       "media": {
+        "shortName": "FOX"
+       },
+       "region": "us",
+       "type": {
+        "id": "1",
+        "shortName": "TV"
+       }
+      }
+     ],
+     "id": "401872967"
+    }
+   ],
+   "date": "2026-10-04T17:00Z",
+   "id": "401872967",
+   "shortName": "DAL @ HOU",
+   "status": {
+    "clock": 0.0,
+    "displayClock": "0:00",
+    "period": 4,
+    "type": {
+     "completed": true,
+     "description": "Final",
+     "detail": "Final",
+     "id": "3",
+     "name": "STATUS_FINAL",
+     "shortDetail": "Final",
+     "state": "post"
+    }
+   }
+  },
+  {
+   "competitions": [
+    {
+     "broadcasts": [
+      {
+       "market": "national",
+       "names": [
+        "NBC"
+       ]
+      }
+     ],
+     "competitors": [
+      {
+       "homeAway": "home",
+       "score": "0",
+       "team": {
+        "abbreviation": "CAR"
+       }
+      },
+      {
+       "homeAway": "away",
+       "score": "0",
+       "team": {
+        "abbreviation": "DET"
+       }
+      }
+     ],
+     "date": "2026-10-05T00:20Z",
+     "geoBroadcasts": [
+      {
+       "lang": "en",
+       "market": {
+        "id": "1",
+        "type": "National"
+       },
+       "media": {
+        "shortName": "NBC"
+       },
+       "region": "us",
+       "type": {
+        "id": "1",
+        "shortName": "TV"
+       }
+      }
+     ],
+     "id": "401872978"
+    }
+   ],
+   "date": "2026-10-05T00:20Z",
+   "id": "401872978",
+   "shortName": "DET @ CAR",
+   "status": {
+    "clock": 0.0,
+    "displayClock": "0:00",
+    "period": 0,
+    "type": {
+     "completed": false,
+     "description": "Scheduled",
+     "detail": "Sun, October 4th at 8:20 PM EDT",
+     "id": "1",
+     "name": "STATUS_SCHEDULED",
+     "shortDetail": "10/4 - 8:20 PM EDT",
+     "state": "pre"
+    }
+   }
+  },
+  {
+   "competitions": [
+    {
+     "broadcasts": [
+      {
+       "market": "national",
+       "names": [
+        "Prime Video"
+       ]
+      }
+     ],
+     "competitors": [
+      {
+       "homeAway": "home",
+       "score": "27",
+       "team": {
+        "abbreviation": "CLE"
+       }
+      },
+      {
+       "homeAway": "away",
+       "score": "24",
+       "team": {
+        "abbreviation": "PIT"
+       }
+      }
+     ],
+     "date": "2026-10-02T00:15Z",
+     "geoBroadcasts": [
+      {
+       "lang": "en",
+       "market": {
+        "id": "1",
+        "type": "National"
+       },
+       "media": {
+        "shortName": "Prime Video"
+       },
+       "region": "us",
+       "type": {
+        "id": "4",
+        "shortName": "Streaming"
+       }
+      }
+     ],
+     "id": "401872964"
+    }
+   ],
+   "date": "2026-10-02T00:15Z",
+   "id": "401872964",
+   "shortName": "PIT @ CLE",
+   "status": {
+    "clock": 0.0,
+    "displayClock": "0:00",
+    "period": 4,
+    "type": {
+     "completed": true,
+     "description": "Final",
+     "detail": "Final",
+     "id": "3",
+     "name": "STATUS_FINAL",
+     "shortDetail": "Final",
+     "state": "post"
+    }
+   }
+  },
+  {
+   "competitions": [
+    {
+     "broadcasts": [
+      {
+       "market": "national",
+       "names": [
+        "ESPN"
+       ]
+      }
+     ],
+     "competitors": [
+      {
+       "homeAway": "home",
+       "score": "0",
+       "team": {
+        "abbreviation": "NO"
+       }
+      },
+      {
+       "homeAway": "away",
+       "score": "0",
+       "team": {
+        "abbreviation": "ATL"
+       }
+      }
+     ],
+     "date": "2026-10-06T00:15Z",
+     "geoBroadcasts": [
+      {
+       "lang": "en",
+       "market": {
+        "id": "1",
+        "type": "National"
+       },
+       "media": {
+        "darkLogo": "",
+        "logo": "https://a.espncdn.com/guid/335fd2d2-97b9-336b-81ee-573eb6bdcffc/logos/default.png",
+        "shortName": "ESPN"
+       },
+       "region": "us",
+       "type": {
+        "id": "1",
+        "shortName": "TV"
+       }
+      }
+     ],
+     "id": "401872979"
+    }
+   ],
+   "date": "2026-10-06T00:15Z",
+   "id": "401872979",
+   "shortName": "ATL @ NO",
+   "status": {
+    "clock": 0.0,
+    "displayClock": "0:00",
+    "period": 0,
+    "type": {
+     "completed": false,
+     "description": "Scheduled",
+     "detail": "Mon, October 5th at 8:15 PM EDT",
+     "id": "1",
+     "name": "STATUS_SCHEDULED",
+     "shortDetail": "10/5 - 8:15 PM EDT",
+     "state": "pre"
+    }
+   }
+  }
+ ]
+}

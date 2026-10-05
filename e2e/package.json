@@ -1,0 +1,13 @@
+{
+  "name": "sundayrush-e2e",
+  "private": true,
+  "scripts": {
+    "test": "playwright test",
+    "test:headed": "playwright test --headed"
+  },
+  "packageManager": "pnpm@10.27.0",
+  "devDependencies": {
+    "@playwright/test": "^1.63.0",
+    "typescript": "^7.0.2"
+  }
+}

@@ -1,0 +1,533 @@
+{
+ "fantasy_content": {
+  "xml:lang": "en-US",
+  "yahoo:uri": "/fantasy/v2/x",
+  "league": [
+   {
+    "league_key": "461.l.1001",
+    "league_id": "1001",
+    "name": "Sunday Funday",
+    "url": "https://football.fantasysports.yahoo.com/f1/x",
+    "logo_url": false,
+    "draft_status": "postdraft",
+    "num_teams": 4,
+    "edit_key": "4",
+    "weekly_deadline": "",
+    "league_update_timestamp": "1790000000",
+    "scoring_type": "head",
+    "league_type": "private",
+    "renew": "",
+    "renewed": "",
+    "felo_tier": "gold",
+    "iris_group_chat_id": "",
+    "short_invitation_url": "",
+    "allow_add_to_dl_extra_pos": 1,
+    "is_pro_league": "0",
+    "is_cash_league": "0",
+    "current_week": 4,
+    "start_week": "1",
+    "start_date": "2026-09-09",
+    "end_week": "17",
+    "end_date": "2026-12-28",
+    "is_finished": 0,
+    "is_plus_league": "0",
+    "game_code": "nfl",
+    "season": "2026"
+   },
+   {
+    "settings": [
+     {
+      "draft_type": "live",
+      "scoring_type": "head",
+      "uses_playoff": "1",
+      "roster_positions": [
+       {
+        "roster_position": {
+         "position": "QB",
+         "position_type": "O",
+         "count": 1
+        }
+       },
+       {
+        "roster_position": {
+         "position": "WR",
+         "position_type": "O",
+         "count": 1
+        }
+       },
+       {
+        "roster_position": {
+         "position": "RB",
+         "position_type": "O",
+         "count": 1
+        }
+       },
+       {
+        "roster_position": {
+         "position": "TE",
+         "position_type": "O",
+         "count": 1
+        }
+       },
+       {
+        "roster_position": {
+         "position": "W/R/T",
+         "position_type": "O",
+         "count": 1
+        }
+       },
+       {
+        "roster_position": {
+         "position": "K",
+         "position_type": "O",
+         "count": 1
+        }
+       },
+       {
+        "roster_position": {
+         "position": "DEF",
+         "position_type": "O",
+         "count": 1
+        }
+       },
+       {
+        "roster_position": {
+         "position": "BN",
+         "position_type": "O",
+         "count": 1
+        }
+       }
+      ],
+      "stat_categories": {
+       "stats": [
+        {
+         "stat": {
+          "stat_id": 4,
+          "enabled": "1",
+          "name": "Passing Yards",
+          "display_name": "Passing Yards",
+          "group": "x",
+          "abbr": "Pass",
+          "sort_order": "1",
+          "position_type": "O",
+          "stat_position_types": [
+           {
+            "stat_position_type": {
+             "position_type": "O"
+            }
+           }
+          ],
+          "is_only_display_stat": "0"
+         }
+        },
+        {
+         "stat": {
+          "stat_id": 5,
+          "enabled": "1",
+          "name": "Passing Touchdowns",
+          "display_name": "Passing Touchdowns",
+          "group": "x",
+          "abbr": "Pass",
+          "sort_order": "1",
+          "position_type": "O",
+          "stat_position_types": [
+           {
+            "stat_position_type": {
+             "position_type": "O"
+            }
+           }
+          ],
+          "is_only_display_stat": "0"
+         }
+        },
+        {
+         "stat": {
+          "stat_id": 6,
+          "enabled": "1",
+          "name": "Interceptions",
+          "display_name": "Interceptions",
+          "group": "x",
+          "abbr": "Inte",
+          "sort_order": "1",
+          "position_type": "O",
+          "stat_position_types": [
+           {
+            "stat_position_type": {
+             "position_type": "O"
+            }
+           }
+          ],
+          "is_only_display_stat": "0"
+         }
+        },
+        {
+         "stat": {
+          "stat_id": 9,
+          "enabled": "1",
+          "name": "Rushing Yards",
+          "display_name": "Rushing Yards",
+          "group": "x",
+          "abbr": "Rush",
+          "sort_order": "1",
+          "position_type": "O",
+          "stat_position_types": [
+           {
+            "stat_position_type": {
+             "position_type": "O"
+            }
+           }
+          ],
+          "is_only_display_stat": "0"
+         }
+        },
+        {
+         "stat": {
+          "stat_id": 10,
+          "enabled": "1",
+          "name": "Rushing Touchdowns",
+          "display_name": "Rushing Touchdowns",
+          "group": "x",
+          "abbr": "Rush",
+          "sort_order": "1",
+          "position_type": "O",
+          "stat_position_types": [
+           {
+            "stat_position_type": {
+             "position_type": "O"
+            }
+           }
+          ],
+          "is_only_display_stat": "0"
+         }
+        },
+        {
+         "stat": {
+          "stat_id": 11,
+          "enabled": "1",
+          "name": "Receptions",
+          "display_name": "Receptions",
+          "group": "x",
+          "abbr": "Rece",
+          "sort_order": "1",
+          "position_type": "O",
+          "stat_position_types": [
+           {
+            "stat_position_type": {
+             "position_type": "O"
+            }
+           }
+          ],
+          "is_only_display_stat": "0"
+         }
+        },
+        {
+         "stat": {
+          "stat_id": 12,
+          "enabled": "1",
+          "name": "Receiving Yards",
+          "display_name": "Receiving Yards",
+          "group": "x",
+          "abbr": "Rece",
+          "sort_order": "1",
+          "position_type": "O",
+          "stat_position_types": [
+           {
+            "stat_position_type": {
+             "position_type": "O"
+            }
+           }
+          ],
+          "is_only_display_stat": "0"
+         }
+        },
+        {
+         "stat": {
+          "stat_id": 13,
+          "enabled": "1",
+          "name": "Receiving Touchdowns",
+          "display_name": "Receiving Touchdowns",
+          "group": "x",
+          "abbr": "Rece",
+          "sort_order": "1",
+          "position_type": "O",
+          "stat_position_types": [
+           {
+            "stat_position_type": {
+             "position_type": "O"
+            }
+           }
+          ],
+          "is_only_display_stat": "0"
+         }
+        },
+        {
+         "stat": {
+          "stat_id": 15,
+          "enabled": "1",
+          "name": "Return Touchdowns",
+          "display_name": "Return Touchdowns",
+          "group": "x",
+          "abbr": "Retu",
+          "sort_order": "1",
+          "position_type": "O",
+          "stat_position_types": [
+           {
+            "stat_position_type": {
+             "position_type": "O"
+            }
+           }
+          ],
+          "is_only_display_stat": "0"
+         }
+        },
+        {
+         "stat": {
+          "stat_id": 16,
+          "enabled": "1",
+          "name": "2-Point Conversions",
+          "display_name": "2-Point Conversions",
+          "group": "x",
+          "abbr": "2-Po",
+          "sort_order": "1",
+          "position_type": "O",
+          "stat_position_types": [
+           {
+            "stat_position_type": {
+             "position_type": "O"
+            }
+           }
+          ],
+          "is_only_display_stat": "0"
+         }
+        },
+        {
+         "stat": {
+          "stat_id": 18,
+          "enabled": "1",
+          "name": "Fumbles Lost",
+          "display_name": "Fumbles Lost",
+          "group": "x",
+          "abbr": "Fumb",
+          "sort_order": "1",
+          "position_type": "O",
+          "stat_position_types": [
+           {
+            "stat_position_type": {
+             "position_type": "O"
+            }
+           }
+          ],
+          "is_only_display_stat": "0"
+         }
+        },
+        {
+         "stat": {
+          "stat_id": 57,
+          "enabled": "1",
+          "name": "Offensive Fumble Return TD",
+          "display_name": "Offensive Fumble Return TD",
+          "group": "x",
+          "abbr": "Offe",
+          "sort_order": "1",
+          "position_type": "O",
+          "stat_position_types": [
+           {
+            "stat_position_type": {
+             "position_type": "O"
+            }
+           }
+          ],
+          "is_only_display_stat": "0"
+         }
+        },
+        {
+         "stat": {
+          "stat_id": 19,
+          "enabled": "1",
+          "name": "Field Goals 0-19 Yards",
+          "display_name": "Field Goals 0-19 Yards",
+          "group": "x",
+          "abbr": "Fiel",
+          "sort_order": "1",
+          "position_type": "K",
+          "stat_position_types": [
+           {
+            "stat_position_type": {
+             "position_type": "K"
+            }
+           }
+          ],
+          "is_only_display_stat": "0"
+         }
+        },
+        {
+         "stat": {
+          "stat_id": 29,
+          "enabled": "1",
+          "name": "Point After Attempt Made",
+          "display_name": "Point After Attempt Made",
+          "group": "x",
+          "abbr": "Poin",
+          "sort_order": "1",
+          "position_type": "K",
+          "stat_position_types": [
+           {
+            "stat_position_type": {
+             "position_type": "K"
+            }
+           }
+          ],
+          "is_only_display_stat": "0"
+         }
+        },
+        {
+         "stat": {
+          "stat_id": 32,
+          "enabled": "1",
+          "name": "Sack",
+          "display_name": "Sack",
+          "group": "x",
+          "abbr": "Sack",
+          "sort_order": "1",
+          "position_type": "DT",
+          "stat_position_types": [
+           {
+            "stat_position_type": {
+             "position_type": "DT"
+            }
+           }
+          ],
+          "is_only_display_stat": "0"
+         }
+        },
+        {
+         "stat": {
+          "stat_id": 33,
+          "enabled": "1",
+          "name": "Interception",
+          "display_name": "Interception",
+          "group": "x",
+          "abbr": "Inte",
+          "sort_order": "1",
+          "position_type": "DT",
+          "stat_position_types": [
+           {
+            "stat_position_type": {
+             "position_type": "DT"
+            }
+           }
+          ],
+          "is_only_display_stat": "0"
+         }
+        }
+       ]
+      },
+      "stat_modifiers": {
+       "stats": [
+        {
+         "stat": {
+          "stat_id": 4,
+          "value": "0.04"
+         }
+        },
+        {
+         "stat": {
+          "stat_id": 5,
+          "value": "4"
+         }
+        },
+        {
+         "stat": {
+          "stat_id": 6,
+          "value": "-1"
+         }
+        },
+        {
+         "stat": {
+          "stat_id": 9,
+          "value": "0.1"
+         }
+        },
+        {
+         "stat": {
+          "stat_id": 10,
+          "value": "6"
+         }
+        },
+        {
+         "stat": {
+          "stat_id": 11,
+          "value": "1"
+         }
+        },
+        {
+         "stat": {
+          "stat_id": 12,
+          "value": "0.1"
+         }
+        },
+        {
+         "stat": {
+          "stat_id": 13,
+          "value": "6"
+         }
+        },
+        {
+         "stat": {
+          "stat_id": 15,
+          "value": "6"
+         }
+        },
+        {
+         "stat": {
+          "stat_id": 16,
+          "value": "2"
+         }
+        },
+        {
+         "stat": {
+          "stat_id": 18,
+          "value": "-2"
+         }
+        },
+        {
+         "stat": {
+          "stat_id": 57,
+          "value": "6"
+         }
+        },
+        {
+         "stat": {
+          "stat_id": 19,
+          "value": "3"
+         }
+        },
+        {
+         "stat": {
+          "stat_id": 29,
+          "value": "1"
+         }
+        },
+        {
+         "stat": {
+          "stat_id": 32,
+          "value": "1"
+         }
+        },
+        {
+         "stat": {
+          "stat_id": 33,
+          "value": "2"
+         }
+        }
+       ]
+      }
+     }
+    ]
+   }
+  ],
+  "time": "42.1ms",
+  "copyright": "Data provided by Yahoo! and STATS, LLC",
+  "refresh_rate": "60"
+ }
+}
