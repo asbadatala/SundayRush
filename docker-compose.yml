@@ -1,0 +1,45 @@
+services:
+  db:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_USER: sundayrush
+      POSTGRES_PASSWORD: sundayrush
+      POSTGRES_DB: sundayrush
+    ports:
+      - "5442:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+      - ./infra/db-init:/docker-entrypoint-initdb.d:ro
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U sundayrush"]
+      interval: 2s
+      timeout: 3s
+      retries: 20
+
+  api:
+    profiles: ["full"]
+    build: ./apps/api
+    env_file: .env
+    environment:
+      DATABASE_URL: postgresql+psycopg://sundayrush:sundayrush@db:5432/sundayrush
+    depends_on:
+      db:
+        condition: service_healthy
+    ports:
+      - "8000:8000"
+
+  web:
+    profiles: ["full"]
+    build:
+      context: ./apps/web
+      args:
+        API_URL: http://api:8000
+    environment:
+      API_URL: http://api:8000
+    depends_on:
+      - api
+    ports:
+      - "3000:3000"
+
+volumes:
+  pgdata:

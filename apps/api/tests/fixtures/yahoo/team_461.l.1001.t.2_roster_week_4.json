@@ -1,0 +1,961 @@
+{
+ "fantasy_content": {
+  "xml:lang": "en-US",
+  "yahoo:uri": "/fantasy/v2/x",
+  "team": [
+   [
+    {
+     "team_key": "461.l.1001.t.2"
+    },
+    {
+     "team_id": "2"
+    },
+    {
+     "name": "Gridiron Gurus"
+    },
+    [],
+    {
+     "url": "https://football.fantasysports.yahoo.com/"
+    },
+    {
+     "team_logos": [
+      {
+       "team_logo": {
+        "size": "large",
+        "url": ""
+       }
+      }
+     ]
+    },
+    [],
+    {
+     "waiver_priority": 2
+    },
+    [],
+    {
+     "number_of_moves": 3
+    },
+    {
+     "number_of_trades": 0
+    },
+    {
+     "roster_adds": {
+      "coverage_type": "week",
+      "coverage_value": 4,
+      "value": "0"
+     }
+    },
+    [],
+    {
+     "league_scoring_type": "head"
+    },
+    [],
+    [],
+    {
+     "has_draft_grade": 0
+    },
+    [],
+    [],
+    {
+     "managers": [
+      {
+       "manager": {
+        "manager_id": "2",
+        "nickname": "Sam",
+        "guid": "GUID2",
+        "is_commissioner": "0"
+       }
+      }
+     ]
+    }
+   ],
+   {
+    "roster": {
+     "coverage_type": "week",
+     "week": "4",
+     "is_prescoring": false,
+     "is_editable": 0,
+     "0": {
+      "players": {
+       "0": {
+        "player": [
+         [
+          {
+           "player_key": "461.p.31002"
+          },
+          {
+           "player_id": "31002"
+          },
+          {
+           "name": {
+            "full": "Lamar Jackson",
+            "first": "Lamar",
+            "last": "Jackson",
+            "ascii_first": "Lamar",
+            "ascii_last": "Jackson"
+           }
+          },
+          {
+           "editorial_player_key": "nfl.p.31002"
+          },
+          {
+           "editorial_team_key": "nfl.t.x"
+          },
+          {
+           "editorial_team_full_name": "BAL"
+          },
+          {
+           "editorial_team_abbr": "Bal"
+          },
+          {
+           "bye_weeks": {
+            "week": "9"
+           }
+          },
+          {
+           "uniform_number": "1"
+          },
+          {
+           "display_position": "QB"
+          },
+          {
+           "headshot": {
+            "url": "",
+            "size": "small"
+           }
+          },
+          {
+           "image_url": ""
+          },
+          {
+           "is_undroppable": "0"
+          },
+          {
+           "position_type": "O"
+          },
+          {
+           "primary_position": "QB"
+          },
+          {
+           "eligible_positions": [
+            {
+             "position": "QB"
+            }
+           ]
+          },
+          {
+           "has_player_notes": 1
+          },
+          []
+         ],
+         {
+          "selected_position": [
+           {
+            "coverage_type": "week",
+            "week": "4"
+           },
+           {
+            "position": "QB"
+           },
+           {
+            "is_flex": 0
+           }
+          ]
+         }
+        ]
+       },
+       "1": {
+        "player": [
+         [
+          {
+           "player_key": "461.p.29279"
+          },
+          {
+           "player_id": "29279"
+          },
+          {
+           "name": {
+            "full": "Derrick Henry",
+            "first": "Derrick",
+            "last": "Henry",
+            "ascii_first": "Derrick",
+            "ascii_last": "Henry"
+           }
+          },
+          {
+           "editorial_player_key": "nfl.p.29279"
+          },
+          {
+           "editorial_team_key": "nfl.t.x"
+          },
+          {
+           "editorial_team_full_name": "BAL"
+          },
+          {
+           "editorial_team_abbr": "Bal"
+          },
+          {
+           "bye_weeks": {
+            "week": "9"
+           }
+          },
+          {
+           "uniform_number": "1"
+          },
+          {
+           "display_position": "RB"
+          },
+          {
+           "headshot": {
+            "url": "",
+            "size": "small"
+           }
+          },
+          {
+           "image_url": ""
+          },
+          {
+           "is_undroppable": "0"
+          },
+          {
+           "position_type": "O"
+          },
+          {
+           "primary_position": "RB"
+          },
+          {
+           "eligible_positions": [
+            {
+             "position": "RB"
+            }
+           ]
+          },
+          {
+           "has_player_notes": 1
+          },
+          []
+         ],
+         {
+          "selected_position": [
+           {
+            "coverage_type": "week",
+            "week": "4"
+           },
+           {
+            "position": "RB"
+           },
+           {
+            "is_flex": 0
+           }
+          ]
+         }
+        ]
+       },
+       "2": {
+        "player": [
+         [
+          {
+           "player_key": "461.p.30972"
+          },
+          {
+           "player_id": "30972"
+          },
+          {
+           "name": {
+            "full": "Saquon Barkley",
+            "first": "Saquon",
+            "last": "Barkley",
+            "ascii_first": "Saquon",
+            "ascii_last": "Barkley"
+           }
+          },
+          {
+           "editorial_player_key": "nfl.p.30972"
+          },
+          {
+           "editorial_team_key": "nfl.t.x"
+          },
+          {
+           "editorial_team_full_name": "PHI"
+          },
+          {
+           "editorial_team_abbr": "Phi"
+          },
+          {
+           "bye_weeks": {
+            "week": "9"
+           }
+          },
+          {
+           "uniform_number": "1"
+          },
+          {
+           "display_position": "RB"
+          },
+          {
+           "headshot": {
+            "url": "",
+            "size": "small"
+           }
+          },
+          {
+           "image_url": ""
+          },
+          {
+           "is_undroppable": "0"
+          },
+          {
+           "position_type": "O"
+          },
+          {
+           "primary_position": "RB"
+          },
+          {
+           "eligible_positions": [
+            {
+             "position": "RB"
+            }
+           ]
+          },
+          {
+           "has_player_notes": 1
+          },
+          []
+         ],
+         {
+          "selected_position": [
+           {
+            "coverage_type": "week",
+            "week": "4"
+           },
+           {
+            "position": "RB"
+           },
+           {
+            "is_flex": 0
+           }
+          ]
+         }
+        ]
+       },
+       "3": {
+        "player": [
+         [
+          {
+           "player_key": "461.p.40008"
+          },
+          {
+           "player_id": "40008"
+          },
+          {
+           "name": {
+            "full": "Malik Nabers",
+            "first": "Malik",
+            "last": "Nabers",
+            "ascii_first": "Malik",
+            "ascii_last": "Nabers"
+           }
+          },
+          {
+           "editorial_player_key": "nfl.p.40008"
+          },
+          {
+           "editorial_team_key": "nfl.t.x"
+          },
+          {
+           "editorial_team_full_name": "NYG"
+          },
+          {
+           "editorial_team_abbr": "Nyg"
+          },
+          {
+           "bye_weeks": {
+            "week": "9"
+           }
+          },
+          {
+           "uniform_number": "1"
+          },
+          {
+           "display_position": "WR"
+          },
+          {
+           "headshot": {
+            "url": "",
+            "size": "small"
+           }
+          },
+          {
+           "image_url": ""
+          },
+          {
+           "is_undroppable": "0"
+          },
+          {
+           "position_type": "O"
+          },
+          {
+           "primary_position": "WR"
+          },
+          {
+           "eligible_positions": [
+            {
+             "position": "WR"
+            }
+           ]
+          },
+          {
+           "has_player_notes": 1
+          },
+          []
+         ],
+         {
+          "selected_position": [
+           {
+            "coverage_type": "week",
+            "week": "4"
+           },
+           {
+            "position": "WR"
+           },
+           {
+            "is_flex": 0
+           }
+          ]
+         }
+        ]
+       },
+       "4": {
+        "player": [
+         [
+          {
+           "player_key": "461.p.40009"
+          },
+          {
+           "player_id": "40009"
+          },
+          {
+           "name": {
+            "full": "Nico Collins",
+            "first": "Nico",
+            "last": "Collins",
+            "ascii_first": "Nico",
+            "ascii_last": "Collins"
+           }
+          },
+          {
+           "editorial_player_key": "nfl.p.40009"
+          },
+          {
+           "editorial_team_key": "nfl.t.x"
+          },
+          {
+           "editorial_team_full_name": "HOU"
+          },
+          {
+           "editorial_team_abbr": "Hou"
+          },
+          {
+           "bye_weeks": {
+            "week": "9"
+           }
+          },
+          {
+           "uniform_number": "1"
+          },
+          {
+           "display_position": "WR"
+          },
+          {
+           "headshot": {
+            "url": "",
+            "size": "small"
+           }
+          },
+          {
+           "image_url": ""
+          },
+          {
+           "is_undroppable": "0"
+          },
+          {
+           "position_type": "O"
+          },
+          {
+           "primary_position": "WR"
+          },
+          {
+           "eligible_positions": [
+            {
+             "position": "WR"
+            }
+           ]
+          },
+          {
+           "has_player_notes": 1
+          },
+          []
+         ],
+         {
+          "selected_position": [
+           {
+            "coverage_type": "week",
+            "week": "4"
+           },
+           {
+            "position": "WR"
+           },
+           {
+            "is_flex": 0
+           }
+          ]
+         }
+        ]
+       },
+       "5": {
+        "player": [
+         [
+          {
+           "player_key": "461.p.40010"
+          },
+          {
+           "player_id": "40010"
+          },
+          {
+           "name": {
+            "full": "Trey McBride",
+            "first": "Trey",
+            "last": "McBride",
+            "ascii_first": "Trey",
+            "ascii_last": "McBride"
+           }
+          },
+          {
+           "editorial_player_key": "nfl.p.40010"
+          },
+          {
+           "editorial_team_key": "nfl.t.x"
+          },
+          {
+           "editorial_team_full_name": "ARI"
+          },
+          {
+           "editorial_team_abbr": "Ari"
+          },
+          {
+           "bye_weeks": {
+            "week": "9"
+           }
+          },
+          {
+           "uniform_number": "1"
+          },
+          {
+           "display_position": "TE"
+          },
+          {
+           "headshot": {
+            "url": "",
+            "size": "small"
+           }
+          },
+          {
+           "image_url": ""
+          },
+          {
+           "is_undroppable": "0"
+          },
+          {
+           "position_type": "O"
+          },
+          {
+           "primary_position": "TE"
+          },
+          {
+           "eligible_positions": [
+            {
+             "position": "TE"
+            }
+           ]
+          },
+          {
+           "has_player_notes": 1
+          },
+          []
+         ],
+         {
+          "selected_position": [
+           {
+            "coverage_type": "week",
+            "week": "4"
+           },
+           {
+            "position": "TE"
+           },
+           {
+            "is_flex": 0
+           }
+          ]
+         }
+        ]
+       },
+       "6": {
+        "player": [
+         [
+          {
+           "player_key": "461.p.40011"
+          },
+          {
+           "player_id": "40011"
+          },
+          {
+           "name": {
+            "full": "Kyren Williams",
+            "first": "Kyren",
+            "last": "Williams",
+            "ascii_first": "Kyren",
+            "ascii_last": "Williams"
+           }
+          },
+          {
+           "editorial_player_key": "nfl.p.40011"
+          },
+          {
+           "editorial_team_key": "nfl.t.x"
+          },
+          {
+           "editorial_team_full_name": "LAR"
+          },
+          {
+           "editorial_team_abbr": "Lar"
+          },
+          {
+           "bye_weeks": {
+            "week": "9"
+           }
+          },
+          {
+           "uniform_number": "1"
+          },
+          {
+           "display_position": "RB"
+          },
+          {
+           "headshot": {
+            "url": "",
+            "size": "small"
+           }
+          },
+          {
+           "image_url": ""
+          },
+          {
+           "is_undroppable": "0"
+          },
+          {
+           "position_type": "O"
+          },
+          {
+           "primary_position": "RB"
+          },
+          {
+           "eligible_positions": [
+            {
+             "position": "RB"
+            }
+           ]
+          },
+          {
+           "has_player_notes": 1
+          },
+          []
+         ],
+         {
+          "selected_position": [
+           {
+            "coverage_type": "week",
+            "week": "4"
+           },
+           {
+            "position": "W/R/T"
+           },
+           {
+            "is_flex": 1
+           }
+          ]
+         }
+        ]
+       },
+       "7": {
+        "player": [
+         [
+          {
+           "player_key": "461.p.30346"
+          },
+          {
+           "player_id": "30346"
+          },
+          {
+           "name": {
+            "full": "Harrison Butker",
+            "first": "Harrison",
+            "last": "Butker",
+            "ascii_first": "Harrison",
+            "ascii_last": "Butker"
+           }
+          },
+          {
+           "editorial_player_key": "nfl.p.30346"
+          },
+          {
+           "editorial_team_key": "nfl.t.x"
+          },
+          {
+           "editorial_team_full_name": "KC"
+          },
+          {
+           "editorial_team_abbr": "KC"
+          },
+          {
+           "bye_weeks": {
+            "week": "9"
+           }
+          },
+          {
+           "uniform_number": "1"
+          },
+          {
+           "display_position": "K"
+          },
+          {
+           "headshot": {
+            "url": "",
+            "size": "small"
+           }
+          },
+          {
+           "image_url": ""
+          },
+          {
+           "is_undroppable": "0"
+          },
+          {
+           "position_type": "K"
+          },
+          {
+           "primary_position": "K"
+          },
+          {
+           "eligible_positions": [
+            {
+             "position": "K"
+            }
+           ]
+          },
+          {
+           "has_player_notes": 1
+          },
+          []
+         ],
+         {
+          "selected_position": [
+           {
+            "coverage_type": "week",
+            "week": "4"
+           },
+           {
+            "position": "K"
+           },
+           {
+            "is_flex": 0
+           }
+          ]
+         }
+        ]
+       },
+       "8": {
+        "player": [
+         [
+          {
+           "player_key": "461.p.100021"
+          },
+          {
+           "player_id": "100021"
+          },
+          {
+           "name": {
+            "full": "Philadelphia",
+            "first": "Philadelphia",
+            "last": "",
+            "ascii_first": "Philadelphia",
+            "ascii_last": ""
+           }
+          },
+          {
+           "editorial_player_key": "nfl.p.100021"
+          },
+          {
+           "editorial_team_key": "nfl.t.x"
+          },
+          {
+           "editorial_team_full_name": "PHI"
+          },
+          {
+           "editorial_team_abbr": "Phi"
+          },
+          {
+           "bye_weeks": {
+            "week": "9"
+           }
+          },
+          {
+           "uniform_number": "1"
+          },
+          {
+           "display_position": "DEF"
+          },
+          {
+           "headshot": {
+            "url": "",
+            "size": "small"
+           }
+          },
+          {
+           "image_url": ""
+          },
+          {
+           "is_undroppable": "0"
+          },
+          {
+           "position_type": "DT"
+          },
+          {
+           "primary_position": "DEF"
+          },
+          {
+           "eligible_positions": [
+            {
+             "position": "DEF"
+            }
+           ]
+          },
+          {
+           "has_player_notes": 1
+          },
+          []
+         ],
+         {
+          "selected_position": [
+           {
+            "coverage_type": "week",
+            "week": "4"
+           },
+           {
+            "position": "DEF"
+           },
+           {
+            "is_flex": 0
+           }
+          ]
+         }
+        ]
+       },
+       "9": {
+        "player": [
+         [
+          {
+           "player_key": "461.p.40012"
+          },
+          {
+           "player_id": "40012"
+          },
+          {
+           "name": {
+            "full": "Drake London",
+            "first": "Drake",
+            "last": "London",
+            "ascii_first": "Drake",
+            "ascii_last": "London"
+           }
+          },
+          {
+           "editorial_player_key": "nfl.p.40012"
+          },
+          {
+           "editorial_team_key": "nfl.t.x"
+          },
+          {
+           "editorial_team_full_name": "ATL"
+          },
+          {
+           "editorial_team_abbr": "Atl"
+          },
+          {
+           "bye_weeks": {
+            "week": "9"
+           }
+          },
+          {
+           "uniform_number": "1"
+          },
+          {
+           "display_position": "WR"
+          },
+          {
+           "headshot": {
+            "url": "",
+            "size": "small"
+           }
+          },
+          {
+           "image_url": ""
+          },
+          {
+           "is_undroppable": "0"
+          },
+          {
+           "position_type": "O"
+          },
+          {
+           "primary_position": "WR"
+          },
+          {
+           "eligible_positions": [
+            {
+             "position": "WR"
+            }
+           ]
+          },
+          {
+           "has_player_notes": 1
+          },
+          []
+         ],
+         {
+          "selected_position": [
+           {
+            "coverage_type": "week",
+            "week": "4"
+           },
+           {
+            "position": "BN"
+           },
+           {
+            "is_flex": 0
+           }
+          ]
+         }
+        ]
+       },
+       "count": 10
+      }
+     },
+     "outs_of_position": []
+    }
+   }
+  ],
+  "time": "42.1ms",
+  "copyright": "Data provided by Yahoo! and STATS, LLC",
+  "refresh_rate": "60"
+ }
+}

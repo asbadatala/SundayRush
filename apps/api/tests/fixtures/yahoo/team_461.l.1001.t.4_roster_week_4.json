@@ -1,0 +1,178 @@
+{
+ "fantasy_content": {
+  "xml:lang": "en-US",
+  "yahoo:uri": "/fantasy/v2/x",
+  "team": [
+   [
+    {
+     "team_key": "461.l.1001.t.4"
+    },
+    {
+     "team_id": "4"
+    },
+    {
+     "name": "Hail Marys"
+    },
+    [],
+    {
+     "url": "https://football.fantasysports.yahoo.com/"
+    },
+    {
+     "team_logos": [
+      {
+       "team_logo": {
+        "size": "large",
+        "url": ""
+       }
+      }
+     ]
+    },
+    [],
+    {
+     "waiver_priority": 4
+    },
+    [],
+    {
+     "number_of_moves": 3
+    },
+    {
+     "number_of_trades": 0
+    },
+    {
+     "roster_adds": {
+      "coverage_type": "week",
+      "coverage_value": 4,
+      "value": "0"
+     }
+    },
+    [],
+    {
+     "league_scoring_type": "head"
+    },
+    [],
+    [],
+    {
+     "has_draft_grade": 0
+    },
+    [],
+    [],
+    {
+     "managers": [
+      {
+       "manager": {
+        "manager_id": "4",
+        "nickname": "Jo",
+        "guid": "GUID4",
+        "is_commissioner": "0"
+       }
+      }
+     ]
+    }
+   ],
+   {
+    "roster": {
+     "coverage_type": "week",
+     "week": "4",
+     "is_prescoring": false,
+     "is_editable": 0,
+     "0": {
+      "players": {
+       "0": {
+        "player": [
+         [
+          {
+           "player_key": "461.p.29369"
+          },
+          {
+           "player_id": "29369"
+          },
+          {
+           "name": {
+            "full": "Dak Prescott",
+            "first": "Dak",
+            "last": "Prescott",
+            "ascii_first": "Dak",
+            "ascii_last": "Prescott"
+           }
+          },
+          {
+           "editorial_player_key": "nfl.p.29369"
+          },
+          {
+           "editorial_team_key": "nfl.t.x"
+          },
+          {
+           "editorial_team_full_name": "DAL"
+          },
+          {
+           "editorial_team_abbr": "Dal"
+          },
+          {
+           "bye_weeks": {
+            "week": "9"
+           }
+          },
+          {
+           "uniform_number": "1"
+          },
+          {
+           "display_position": "QB"
+          },
+          {
+           "headshot": {
+            "url": "",
+            "size": "small"
+           }
+          },
+          {
+           "image_url": ""
+          },
+          {
+           "is_undroppable": "0"
+          },
+          {
+           "position_type": "O"
+          },
+          {
+           "primary_position": "QB"
+          },
+          {
+           "eligible_positions": [
+            {
+             "position": "QB"
+            }
+           ]
+          },
+          {
+           "has_player_notes": 1
+          },
+          []
+         ],
+         {
+          "selected_position": [
+           {
+            "coverage_type": "week",
+            "week": "4"
+           },
+           {
+            "position": "QB"
+           },
+           {
+            "is_flex": 0
+           }
+          ]
+         }
+        ]
+       },
+       "count": 1
+      }
+     },
+     "outs_of_position": []
+    }
+   }
+  ],
+  "time": "42.1ms",
+  "copyright": "Data provided by Yahoo! and STATS, LLC",
+  "refresh_rate": "60"
+ }
+}

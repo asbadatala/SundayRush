@@ -1,0 +1,15 @@
+.env
+.DS_Store
+node_modules/
+# Python
+__pycache__/
+*.pyc
+.venv/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+# Playwright
+e2e/test-results/
+e2e/playwright-report/
+# next dev --experimental-https certs
+apps/web/certificates/
